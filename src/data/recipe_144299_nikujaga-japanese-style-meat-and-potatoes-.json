@@ -1,0 +1,67 @@
+{
+  "url": "https://www.allrecipes.com/recipe/144299/nikujaga-japanese-style-meat-and-potatoes/",
+  "scraped_at": "2025-09-25T00:24:24.507707",
+  "recipe_id": "144299",
+  "title": "Nikujaga (Japanese-Style Meat and Potatoes)",
+  "description": "This main dish recipe features sliced beef sirloin cooked with potatoes, and onion in a sauce made with prepared dashi soup, sake, and soy sauce.",
+  "rating": {
+    "value": "4.6",
+    "count": "20"
+  },
+  "preptime": "PT15M",
+  "cooktime": "PT35M",
+  "totaltime": "PT50M",
+  "servings": "4",
+  "ingredients": [
+    "8 snow peas",
+    "1 tablespoon vegetable oil",
+    "0.25 pound sirloin steak, thinly sliced",
+    "4 potatoes, cut into bite sized pieces",
+    "2 cups dashi soup",
+    "0.25 cup soy sauce",
+    "0.25 cup sake",
+    "1 tablespoon white sugar",
+    "1 onion, chopped"
+  ],
+  "instructions": [
+    "Put the snow peas in a small saucepan with enough water to cover; bring to a boil and immediately remove from heat. Drain and set aside.",
+    "Heat the oil in a large skillet over medium heat; cook the beef in the oil until browned. Add the potatoes; cook and stir until soft, 5 to 7 minutes. Stir the dashi soup, soy sauce, sake, and sugar into the mixture; simmer for 10 minutes.",
+    "Reduce heat to low and scatter the chopped onion over the mixture; allow to simmer until the liquid is nearly completely evaporated, about 15 minutes more. Top the mixture with the snow peas to serve."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "316 kcal",
+    "carbohydrateContent": "48 g",
+    "cholesterolContent": "13 mg",
+    "fiberContent": "6 g",
+    "proteinContent": "14 g",
+    "saturatedFatContent": "2 g",
+    "sodiumContent": "1109 mg",
+    "sugarContent": "9 g",
+    "fatContent": "6 g",
+    "unsaturatedFatContent": "0 g"
+  },
+  "author": "[{'@type': 'Person', 'name': 'Hinata'}]",
+  "categories": [
+    "Dinner"
+  ],
+  "featured_tweaks": [
+    {
+      "text": "Overall it was pretty good but the measurements were way off. HAS to be a typo. 1/4lb of meat to serve 4??? I used a lil over 1lb and it even then it was swimming in the broth. After following the recipe, i added extra soy and sugar only because i thought the flavor was a little on the lite side. Overall good.** If you cant find dashi, beef broth/stock works just fine. My japanese mom happen to have some so i was able to get some from her.",
+      "rating": 4,
+      "has_modification": true,
+      "is_featured": true
+    }
+  ],
+  "reviews": [
+    {
+      "text": "Great recipe and not hard, even for someone like me who never cooks. The taste is really good, but i agree with everyone else about the measurements. You need at least a 1lb of beef for this. Also, I threw in carrots since i had them around.",
+      "rating": 5
+    },
+    {
+      "text": "Overall it was pretty good but the measurements were way off. HAS to be a typo. 1/4lb of meat to serve 4??? I used a lil over 1lb and it even then it was swimming in the broth. After following the recipe, i added extra soy and sugar only because i thought the flavor was a little on the lite side. Overall good.** If you cant find dashi, beef broth/stock works just fine. My japanese mom happen to have some so i was able to get some from her.",
+      "rating": 4,
+      "has_modification": true
+    }
+  ]
+}

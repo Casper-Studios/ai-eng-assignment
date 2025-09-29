@@ -1,0 +1,30 @@
+{
+  "url": "https://www.allrecipes.com/recipe/45613/mango-teriyaki-marinade/",
+  "scraped_at": "2025-09-25T00:24:24.212122",
+  "recipe_id": "45613",
+  "title": "Mango Teriyaki Marinade",
+  "description": "Use this sweet and tangy marinade on chicken or pork!",
+  "rating": {
+    "value": "4.3",
+    "count": "12"
+  },
+  "preptime": "PT10M",
+  "totaltime": "PT130M",
+  "servings": "8",
+  "ingredients": [
+    "1.5 cups mango nectar",
+    "1.5 cups teriyaki sauce",
+    "0.75 cup dried cherries",
+    "1 clove garlic, peeled and crushed",
+    "salt and pepper to taste"
+  ],
+  "instructions": [
+    "In a blender, thoroughly mix mango nectar, teriyaki sauce, dried cherries, garlic, salt and pepper. In the refrigerator, marinate meat in the mixture at least 2 hours before grilling as desired."
+  ],
+  "author": "[{'@type': 'Person', 'name': 'Anna Oliva'}]",
+  "categories": [
+    "Condiment"
+  ],
+  "featured_tweaks": [],
+  "reviews": []
+}

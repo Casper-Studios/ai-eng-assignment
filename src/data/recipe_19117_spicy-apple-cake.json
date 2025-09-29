@@ -1,0 +1,85 @@
+{
+  "url": "https://www.allrecipes.com/recipe/19117/spicy-apple-cake/",
+  "scraped_at": "2025-09-25T00:24:23.934660",
+  "recipe_id": "19117",
+  "title": "Spicy Apple Cake",
+  "description": "This delicious spicy apple cake recipe is made with fresh apples, spices, and sugar. It&#39;s a wonderfully perfect treat for the apple harvest season.",
+  "rating": {
+    "value": "4.7",
+    "count": "79"
+  },
+  "preptime": "PT25M",
+  "cooktime": "PT45M",
+  "totaltime": "PT70M",
+  "servings": "9",
+  "ingredients": [
+    "1.5 cups all-purpose flour",
+    "1 teaspoon ground cinnamon",
+    "1 teaspoon baking powder",
+    "0.5 teaspoon baking soda",
+    "0.5 teaspoon salt",
+    "0.5 teaspoon ground nutmeg",
+    "1 cup brown sugar",
+    "0.5 cup shortening",
+    "0.25 cup white sugar",
+    "2 eggs",
+    "1 teaspoon vanilla extract",
+    "0.5 cup milk",
+    "2 cups apple - peeled, cored, and chopped",
+    "2 cups sifted confectioners' sugar",
+    "0.25 cup shortening",
+    "0.25 teaspoon ground cinnamon",
+    "1 pinch ground nutmeg",
+    "0.25 cup evaporated milk"
+  ],
+  "instructions": [
+    "Preheat the oven to 350 degrees F (175 degrees C). Grease and flour a 9-inch square pan.",
+    "Sift together flour, 1 teaspoon cinnamon, baking powder, baking soda, salt, and nutmeg. Set aside.",
+    "Cream brown sugar, 1/2 cup shortening, and white sugar together in a large bowl until light and fluffy. Beat in eggs one at a time, then stir in vanilla. Beat in flour mixture alternately with milk, mixing until just combined. Stir in chopped apples.",
+    "Spread batter evenly in the prepared pan. Bake in the preheated oven until a toothpick inserted into the center of cake comes out clean, 35 to 40 minutes. Let cool.",
+    "Combine confectioners&#39; sugar, 1/4 cup shortening, 1/4 teaspoon cinnamon, and nutmeg in a medium bowl. Beat until frosting is light and creamy. Beat in evaporated milk 1 tablespoon at a time until desired spreading consistency is reached. Spread over top of cooled cake."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "468 kcal",
+    "carbohydrateContent": "71 g",
+    "cholesterolContent": "44 mg",
+    "fiberContent": "2 g",
+    "proteinContent": "5 g",
+    "saturatedFatContent": "5 g",
+    "sodiumContent": "273 mg",
+    "sugarContent": "53 g",
+    "fatContent": "19 g",
+    "unsaturatedFatContent": "0 g"
+  },
+  "author": "[{'@type': 'Person', 'name': 'Linda'}]",
+  "categories": [
+    "Dessert"
+  ],
+  "featured_tweaks": [
+    {
+      "text": "Mmmm, this cake was so good. I made it exactly as directed except I used a different frosting only because I had some leftover from another cake. The next time I make this I will add one more cup of apples because more is better right?!",
+      "rating": 5,
+      "has_modification": true,
+      "is_featured": true
+    },
+    {
+      "text": "Will make this one again! (maybe for Thanksgiving dessert) I would prefer some more apple chunks in it, but that is just my preference. This cake is sweet and delicious.",
+      "rating": 5,
+      "has_modification": true,
+      "is_featured": true
+    }
+  ],
+  "reviews": [
+    {
+      "text": "Mmmm, this cake was so good. I made it exactly as directed except I used a different frosting only because I had some leftover from another cake. The next time I make this I will add one more cup of apples because more is better right?!",
+      "rating": 5,
+      "has_modification": true
+    },
+    {
+      "text": "Will make this one again! (maybe for Thanksgiving dessert) I would prefer some more apple chunks in it, but that is just my preference. This cake is sweet and delicious.",
+      "rating": 5,
+      "has_modification": true
+    }
+  ]
+}

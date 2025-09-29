@@ -1,0 +1,7 @@
+beautifulsoup4>=4.13.5
+loguru>=0.7.3
+lxml>=6.0.2
+openai>=1.109.1
+pydantic>=2.11.9
+python-dotenv>=1.1.1
+requests>=2.32.5

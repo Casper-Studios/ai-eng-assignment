@@ -1,0 +1,103 @@
+{
+  "recipe_id": "144299_enhanced",
+  "original_recipe_id": "144299",
+  "title": "Nikujaga (Japanese-Style Meat and Potatoes) (Community Enhanced)",
+  "ingredients": [
+    "8 snow peas",
+    "1 tablespoon vegetable oil",
+    "1 pound sirloin steak, thinly sliced",
+    "4 potatoes, cut into bite sized pieces",
+    "2 cups dashi soup (or beef broth/stock as substitute)",
+    "0.25-0.33 cup soy sauce (adjust to taste)",
+    "0.25 cup sake",
+    "1-2 tablespoons white sugar (adjust to taste)",
+    "1 onion, chopped",
+    "Optional: carrots, cut into bite-sized pieces"
+  ],
+  "instructions": [
+    "Put the snow peas in a small saucepan with enough water to cover; bring to a boil and immediately remove from heat. Drain and set aside.",
+    "Heat the oil in a large skillet over medium heat; cook the beef in the oil until browned. Add the potatoes (and carrots if using); cook and stir until soft, 5 to 7 minutes. Stir the dashi soup (or beef broth), soy sauce, sake, and sugar into the mixture; simmer for 10 minutes.",
+    "Reduce heat to low and scatter the chopped onion over the mixture; allow to simmer until the liquid is nearly completely evaporated, about 15 minutes more. Taste and adjust seasoning with additional soy sauce and sugar if needed for flavor strength. Top the mixture with the snow peas to serve."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Overall it was pretty good but the measurements were way off. HAS to be a typo. 1/4lb of meat to serve 4??? I used a lil over 1lb and it even then it was swimming in the broth. After following the recipe, i added extra soy and sugar only because i thought the flavor was a little on the lite side. Overall good.** If you cant find dashi, beef broth/stock works just fine. My japanese mom happen to have some so i was able to get some from her.",
+        "reviewer": null,
+        "rating": 4
+      },
+      "modification_type": "comprehensive_adjustment",
+      "reasoning": "Multiple adjustments based on practical cooking experience: increased meat quantity for proper serving size, enhanced seasoning for better flavor, and ingredient substitution guidance.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "0.25 pound sirloin steak, thinly sliced",
+          "to_text": "1 pound sirloin steak, thinly sliced",
+          "operation": "modify"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "0.25 cup soy sauce",
+          "to_text": "0.25-0.33 cup soy sauce (adjust to taste)",
+          "operation": "modify"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "1 tablespoon white sugar",
+          "to_text": "1-2 tablespoons white sugar (adjust to taste)",
+          "operation": "modify"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "2 cups dashi soup",
+          "to_text": "2 cups dashi soup (or beef broth/stock as substitute)",
+          "operation": "modify"
+        },
+        {
+          "type": "technique",
+          "from_text": "",
+          "to_text": "Taste and adjust seasoning with additional soy sauce and sugar if needed",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Great recipe and not hard, even for someone like me who never cooks. The taste is really good, but i agree with everyone else about the measurements. You need at least a 1lb of beef for this. Also, I threw in carrots since i had them around.",
+        "reviewer": null,
+        "rating": 5
+      },
+      "modification_type": "ingredient_addition",
+      "reasoning": "Adding carrots provides additional vegetables and nutrition while maintaining the dish's Japanese comfort food character.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "Optional: carrots, cut into bite-sized pieces",
+          "operation": "add"
+        },
+        {
+          "type": "technique",
+          "from_text": "Add the potatoes",
+          "to_text": "Add the potatoes (and carrots if using)",
+          "operation": "modify"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 2,
+    "change_types": [
+      "comprehensive_adjustment",
+      "ingredient_addition"
+    ],
+    "expected_impact": "Significant improvements including: 4x more meat (1 lb vs 0.25 lb) for proper serving size, adjustable seasoning ranges for better flavor control, dashi substitution guidance for ingredient accessibility, optional carrots for additional nutrition, and technique refinements for optimal taste."
+  },
+  "description": "This main dish recipe features sliced beef sirloin cooked with potatoes, and onion in a sauce made with prepared dashi soup, sake, and soy sauce.",
+  "servings": "4",
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2025-09-28T22:56:37.746051",
+  "pipeline_version": "1.0.0"
+}

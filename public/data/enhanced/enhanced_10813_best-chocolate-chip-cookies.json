@@ -1,0 +1,63 @@
+{
+  "recipe_id": "10813_enhanced",
+  "original_recipe_id": "10813",
+  "title": "Best Chocolate Chip Cookies (Community Enhanced)",
+  "ingredients": [
+    "1 cup butter, softened",
+    "1 cup white sugar",
+    "1 cup packed brown sugar",
+    "2 eggs",
+    "1 additional egg yolk",
+    "2 teaspoons vanilla extract",
+    "1 teaspoon baking soda",
+    "2 teaspoons hot water",
+    "0.5 teaspoon salt",
+    "3 cups all-purpose flour",
+    "2 cups semisweet chocolate chips",
+    "1 cup chopped walnuts"
+  ],
+  "instructions": [
+    "Gather your ingredients, making sure your butter is softened, and your eggs are room temperature.",
+    "Preheat the oven to 350 degrees F (175 degrees C). Beat butter, white sugar, and brown sugar with an electric mixer in a large bowl until smooth.",
+    "Beat in eggs, one at a time, then stir in vanilla.",
+    "Dissolve baking soda in hot water. Add to batter along with salt.",
+    "Stir in flour, chocolate chips, and walnuts.",
+    "Drop spoonfuls of dough 2 inches apart onto ungreased baking sheets.",
+    "Bake in the preheated oven until edges are nicely browned, about 10 minutes.",
+    "Cool on the baking sheets briefly before removing to a wire rack to cool completely.",
+    "Store in an airtight container or serve immediately and enjoy!"
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "I used an ice cream scoop, that made 16 big cookies. I did add an additional egg yolk to help keep the cookie chewy.They turned out fantastic.",
+        "reviewer": null,
+        "rating": 5
+      },
+      "modification_type": "quantity_adjustment",
+      "reasoning": "Adding an additional egg yolk can help keep the cookie chewy and moist.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "1 additional egg yolk",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 1,
+    "change_types": [
+      "quantity_adjustment"
+    ],
+    "expected_impact": "Adding an additional egg yolk can help keep the cookie chewy and moist."
+  },
+  "description": "This classic chocolate chip cookie recipe makes deliciously buttery cookies with crisp edges, chewy middles, and gooey chocolate chips in every bite.",
+  "servings": "48",
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2025-09-28T23:16:56.270408",
+  "pipeline_version": "1.0.0"
+}

@@ -1,3 +1,17 @@
+Metadata-Version: 2.4
+Name: new-assignment
+Version: 0.1.0
+Summary: Add your description here
+Requires-Python: >=3.13
+Description-Content-Type: text/markdown
+Requires-Dist: beautifulsoup4>=4.13.5
+Requires-Dist: loguru>=0.7.3
+Requires-Dist: lxml>=6.0.2
+Requires-Dist: openai>=1.109.1
+Requires-Dist: pydantic>=2.11.9
+Requires-Dist: python-dotenv>=1.1.1
+Requires-Dist: requests>=2.32.5
+
 # Recipe Enhancement Platform
 
 Automatically enhances recipes by analyzing and applying community-tested modifications from AllRecipes.com. Uses LLM processing to extract meaningful recipe tweaks and apply them with full citation tracking.
@@ -95,16 +109,6 @@ The LLM Analysis Pipeline processes recipes in 3 steps:
 
 Each run produces one enhanced recipe per original recipe, with complete attribution showing exactly what changed and why.
 
-## Documentation
-
-📁 **[Complete Documentation](docs/README.md)** - Comprehensive documentation index
-
-### Quick Links
-- **[Validation Results](docs/validation/FINAL_VALIDATION_REPORT.md)** - Proof the system works (6/6 recipes, 91% accuracy)
-- **[Demo Script](docs/presentations/PRESENTATION_SCRIPT_SHORT.md)** - 5-7 minute presentation guide
-- **[Technical Analysis](docs/validation/COMPREHENSIVE_PIPELINE_VALIDATION_ANALYSIS.md)** - Detailed system analysis
-- **[Development Guidelines](docs/development/)** - Coding standards and templates
-
 ## Development
 
 ```bash
@@ -113,7 +117,4 @@ uv add <package_name>
 
 # Run tests
 cd src && uv run python test_pipeline.py single
-
-# Run validation suite
-python run_ultimate_validation.py
 ```

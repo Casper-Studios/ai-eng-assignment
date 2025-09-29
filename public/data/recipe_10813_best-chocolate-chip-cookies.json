@@ -1,0 +1,123 @@
+{
+  "url": "https://www.allrecipes.com/recipe/10813/best-chocolate-chip-cookies/",
+  "scraped_at": "2025-09-25T00:24:21.951599",
+  "recipe_id": "10813",
+  "title": "Best Chocolate Chip Cookies",
+  "description": "This classic chocolate chip cookie recipe makes deliciously buttery cookies with crisp edges, chewy middles, and gooey chocolate chips in every bite.",
+  "rating": {
+    "value": "4.6",
+    "count": "19353"
+  },
+  "preptime": "PT20M",
+  "cooktime": "PT10M",
+  "totaltime": "PT30M",
+  "servings": "48",
+  "ingredients": [
+    "1 cup butter, softened",
+    "1 cup white sugar",
+    "1 cup packed brown sugar",
+    "2 eggs",
+    "2 teaspoons vanilla extract",
+    "1 teaspoon baking soda",
+    "2 teaspoons hot water",
+    "0.5 teaspoon salt",
+    "3 cups all-purpose flour",
+    "2 cups semisweet chocolate chips",
+    "1 cup chopped walnuts"
+  ],
+  "instructions": [
+    "Gather your ingredients, making sure your butter is softened, and your eggs are room temperature.",
+    "Preheat the oven to 350 degrees F (175 degrees C). Beat butter, white sugar, and brown sugar with an electric mixer in a large bowl until smooth.",
+    "Beat in eggs, one at a time, then stir in vanilla.",
+    "Dissolve baking soda in hot water. Add to batter along with salt.",
+    "Stir in flour, chocolate chips, and walnuts.",
+    "Drop spoonfuls of dough 2 inches apart onto ungreased baking sheets.",
+    "Bake in the preheated oven until edges are nicely browned, about 10 minutes.",
+    "Cool on the baking sheets briefly before removing to a wire rack to cool completely.",
+    "Store in an airtight container or serve immediately and enjoy!"
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "146 kcal",
+    "carbohydrateContent": "19 g",
+    "cholesterolContent": "10 mg",
+    "fiberContent": "1 g",
+    "proteinContent": "2 g",
+    "saturatedFatContent": "4 g",
+    "sodiumContent": "76 mg",
+    "fatContent": "8 g",
+    "unsaturatedFatContent": "0 g"
+  },
+  "author": "[{'@type': 'Person', 'name': 'Dora'}]",
+  "categories": [
+    "Dessert"
+  ],
+  "featured_tweaks": [
+    {
+      "text": "I used an ice cream scoop, that made 16 big cookies. I did add an additional egg yolk to help keep the cookie chewy.They turned out fantastic.",
+      "rating": 5,
+      "has_modification": true,
+      "is_featured": true
+    },
+    {
+      "text": "These are awesome cookies. I followed the advice of others by making the following tweaks: (1) I used a half cup of sugar and one-and-a-half cups of brown sugar; (2) I omitted the water; (3) I added a teaspoon of cream of tartar to the batter; (4) I refrigerated the batter for at least an hour before scooping and baking. The cookies retained their shape and didn't spread when baked. I think the cream of tartar made a difference, and the cookies did not come out too cakey either! This recipe is going in my \"favorites\" cookbook.",
+      "rating": 5,
+      "has_modification": true,
+      "is_featured": true
+    },
+    {
+      "text": "The first batch that I made was a bit bland. But I did love that they weren't flat! They are a nice thick, chewy cookie. The second batch I used 1 tsp. of salt instead of 1/2 tsp. and omitted the nuts. This was better, but still not quite as flavorful at the traditional Tollhouse cookie recipe. I found that if I pressed them down slightly before baking that worked the best.If I were to rate this recipe on look and texture, it would be a 5. But the flavor falls a bit flat for me. I may keep trying to see how I can make it taste better, but maintain the aesthetic.",
+      "rating": 3,
+      "has_modification": true,
+      "is_featured": true
+    },
+    {
+      "text": "I just made these and 😍😋!!!! Changes- used a whole cup of white sugar and 1/2 c of brown (because it's what I had) and 1/2 c less flour after reading some other reviews, and added a tiny dash of cinnamon. They are phenomenal! Crispy edges and gooey center. My husband works from home and he can't stop coming out of his office and trying them!!!! HUGE hit and will be my go to. Thank you!!",
+      "rating": 5,
+      "has_modification": true,
+      "is_featured": true
+    }
+  ],
+  "reviews": [
+    {
+      "text": "I used an ice cream scoop, that made 16 big cookies. I did add an additional egg yolk to help keep the cookie chewy.They turned out fantastic.",
+      "rating": 5,
+      "has_modification": true
+    },
+    {
+      "text": "These are awesome cookies. I followed the advice of others by making the following tweaks: (1) I used a half cup of sugar and one-and-a-half cups of brown sugar; (2) I omitted the water; (3) I added a teaspoon of cream of tartar to the batter; (4) I refrigerated the batter for at least an hour before scooping and baking. The cookies retained their shape and didn't spread when baked. I think the cream of tartar made a difference, and the cookies did not come out too cakey either! This recipe is going in my \"favorites\" cookbook.",
+      "rating": 5,
+      "has_modification": true
+    },
+    {
+      "text": "It is a great recipe",
+      "rating": 5
+    },
+    {
+      "text": "The first batch that I made was a bit bland. But I did love that they weren't flat! They are a nice thick, chewy cookie. The second batch I used 1 tsp. of salt instead of 1/2 tsp. and omitted the nuts. This was better, but still not quite as flavorful at the traditional Tollhouse cookie recipe. I found that if I pressed them down slightly before baking that worked the best.If I were to rate this recipe on look and texture, it would be a 5. But the flavor falls a bit flat for me. I may keep trying to see how I can make it taste better, but maintain the aesthetic.",
+      "rating": 3,
+      "has_modification": true
+    },
+    {
+      "text": "Well I am not a Baker by any means but these cookies were very easily prepared. The whole family enjoys these. Thanks so much",
+      "rating": 4
+    },
+    {
+      "text": "They taste good and were so soft. I had my grandmother try it (she’s the cook of the family) and she said they were good. That made me happy. I would use this recipe again. These were my first batch of cookies.",
+      "rating": 5
+    },
+    {
+      "text": "I just made these and 😍😋!!!! Changes- used a whole cup of white sugar and 1/2 c of brown (because it's what I had) and 1/2 c less flour after reading some other reviews, and added a tiny dash of cinnamon. They are phenomenal! Crispy edges and gooey center. My husband works from home and he can't stop coming out of his office and trying them!!!! HUGE hit and will be my go to. Thank you!!",
+      "rating": 5,
+      "has_modification": true
+    },
+    {
+      "text": "This is my favorite cookie recipe, been making it for 15 years.",
+      "rating": 5
+    },
+    {
+      "text": "This is an amazing recipe. I followed it EXACTLY. I will make it many times.",
+      "rating": 5
+    }
+  ]
+}

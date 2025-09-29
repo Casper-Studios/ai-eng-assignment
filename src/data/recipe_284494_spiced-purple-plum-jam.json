@@ -1,0 +1,45 @@
+{
+  "url": "https://www.allrecipes.com/recipe/284494/spiced-purple-plum-jam/",
+  "scraped_at": "2025-09-25T00:24:23.495227",
+  "recipe_id": "284494",
+  "title": "Spiced Purple Plum Jam",
+  "description": "This spiced purple plum jam recipe is the result of combining plums, fresh lemon, and warm, comforting spices for an easy, deliciously giftable jam.",
+  "preptime": "PT20M",
+  "cooktime": "PT40M",
+  "totaltime": "PT65M",
+  "servings": "6 half-pint Mason jars",
+  "ingredients": [
+    "3 pounds plums, pitted and chopped",
+    "1 lemon, zested and juiced",
+    "4 cups white sugar",
+    "3 tablespoons fruit pectin (such as Sure-Jell®)",
+    "2 teaspoons ground cinnamon",
+    "1 teaspoon ground nutmeg",
+    "0.25 teaspoon ground cloves"
+  ],
+  "instructions": [
+    "Inspect 6 half-pint Mason jars for cracks and rings for rust, discarding any defective ones. Immerse in simmering water until filling is ready. Wash new, unused lids and rings in warm, soapy water. Place a few small plates in the freezer.",
+    "Add plums, lemon zest, and lemon juice into a wide, non-reactive 8-quart pot. Whisk sugar, pectin, cinnamon, nutmeg, and cloves together in a small bowl. Stir into the pot until combined.",
+    "Bring to a boil over high heat. Reduce heat to medium-high; cook, stirring frequently and adjusting heat as needed to maintain a gentle boil until thickened and reduced by at least one-third, 20 to 25 minutes. Check doneness by dropping a small spoonful of jam onto a frozen plate. Let sit for 1 to 2 minutes; if jam appears to gel, it is ready. Continue cooking if jam appears thin and runny.",
+    "Pack jam into hot, sterilized jars, filling to within 1/2-inch of the top. Run a clean knife or thin spatula around the insides of the jars to remove any air bubbles. Wipe rims with a moist paper towel to remove any residue. Top with lids and screw rings on tightly.",
+    "Place a rack in the bottom of a large stockpot and fill halfway with water. Bring to a boil and lower jars 2 inches apart into the boiling water using a holder. Pour in more boiling water to cover jars by at least 1 inch. Bring to a rolling boil, cover, and process for 10 minutes.",
+    "Remove the jars from the stockpot and let rest, several inches apart, for 12 to 24 hours. Press the center of each lid with a finger to ensure the lid does not move up or down. Any unsealed jars should be refrigerated and eaten promptly. Remove the rings for storage and store in a cool, dark area. They are shelf-stable at least 1 year."
+  ],
+  "nutrition": {
+    "@type": "NutritionInformation",
+    "calories": "156 kcal",
+    "carbohydrateContent": "40 g",
+    "fiberContent": "1 g",
+    "proteinContent": "0 g",
+    "sodiumContent": "0 mg",
+    "sugarContent": "39 g",
+    "fatContent": "0 g",
+    "unsaturatedFatContent": "0 g"
+  },
+  "author": "[{'@type': 'Person', 'name': 'Marisa McClellan'}]",
+  "categories": [
+    "Jam / Jelly"
+  ],
+  "featured_tweaks": [],
+  "reviews": []
+}

@@ -1,0 +1,35 @@
+{
+  "total_recipes": 4,
+  "successfully_enhanced": 4,
+  "failed_enhancements": 0,
+  "synthetic_reviews_added": 0,
+  "subtle_modifications_found": 4,
+  "enhanced_files": [
+    {
+      "original_file": "recipe_77935_creamy-sweet-potato-with-ginger-soup.json",
+      "enhanced_file": "enhanced_77935_creamy-sweet-potato-with-ginge.json",
+      "modification_reviews": 1,
+      "synthetic_added": false
+    },
+    {
+      "original_file": "recipe_19117_spicy-apple-cake.json",
+      "enhanced_file": "enhanced_19117_spicy-apple-cake.json",
+      "modification_reviews": 1,
+      "synthetic_added": false
+    },
+    {
+      "original_file": "recipe_144299_nikujaga-japanese-style-meat-and-potatoes-.json",
+      "enhanced_file": "enhanced_144299_nikujaga-(japanese-style-meat-.json",
+      "modification_reviews": 1,
+      "synthetic_added": false
+    },
+    {
+      "original_file": "recipe_10813_best-chocolate-chip-cookies.json",
+      "enhanced_file": "enhanced_10813_best-chocolate-chip-cookies.json",
+      "modification_reviews": 1,
+      "synthetic_added": false
+    }
+  ],
+  "enhancement_success_rate": 1.0,
+  "meets_80_percent_target": true
+}

@@ -1,0 +1,4 @@
+2025-09-27 14:27:34,445 - ERROR - Error in validate_recipe_with_api: Rate limit exceeded - too many requests (Category: api_limit)
+2025-09-27 14:27:34,445 - INFO - Retrying validate_recipe_with_api in 60.0s (attempt 1/5)
+2025-09-27 14:28:34,448 - WARNING - Retry 1 failed for validate_recipe_with_api: Rate limit exceeded - too many requests
+2025-09-27 14:28:34,449 - INFO - Retrying validate_recipe_with_api in 90.0s (attempt 2/5)

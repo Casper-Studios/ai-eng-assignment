@@ -4,25 +4,28 @@
   "title": "Best Chocolate Chip Cookies (Community Enhanced)",
   "ingredients": [
     "1 cup butter, softened",
-    "1 cup white sugar",
-    "1 cup packed brown sugar",
+    "0.5 cup white sugar",
+    "1.5 cups packed brown sugar",
     "2 eggs",
     "1 additional egg yolk",
     "2 teaspoons vanilla extract",
     "1 teaspoon baking soda",
-    "2 teaspoons hot water",
-    "0.5 teaspoon salt",
-    "3 cups all-purpose flour",
+    "1 teaspoon cream of tartar",
+    "1 teaspoon salt",
+    "2.5 cups all-purpose flour",
     "2 cups semisweet chocolate chips",
-    "1 cup chopped walnuts"
+    "1 cup chopped walnuts (optional)",
+    "tiny dash of cinnamon"
   ],
   "instructions": [
     "Gather your ingredients, making sure your butter is softened, and your eggs are room temperature.",
     "Preheat the oven to 350 degrees F (175 degrees C). Beat butter, white sugar, and brown sugar with an electric mixer in a large bowl until smooth.",
     "Beat in eggs, one at a time, then stir in vanilla.",
-    "Dissolve baking soda in hot water. Add to batter along with salt.",
-    "Stir in flour, chocolate chips, and walnuts.",
-    "Drop spoonfuls of dough 2 inches apart onto ungreased baking sheets.",
+    "Add baking soda, cream of tartar, and salt to the batter (omit the hot water).",
+    "Stir in flour, chocolate chips, cinnamon, and walnuts (if using).",
+    "Refrigerate the batter for at least an hour before scooping and baking.",
+    "Using an ice cream scoop, drop spoonfuls of dough 2 inches apart onto ungreased baking sheets.",
+    "Press down slightly on each cookie before baking.",
     "Bake in the preheated oven until edges are nicely browned, about 10 minutes.",
     "Cool on the baking sheets briefly before removing to a wire rack to cool completely.",
     "Store in an airtight container or serve immediately and enjoy!"
@@ -34,30 +37,132 @@
         "reviewer": null,
         "rating": 5
       },
-      "modification_type": "addition",
-      "reasoning": "Adding an additional egg yolk helps keep the cookies chewy, improving their texture.",
+      "modification_type": "quantity_adjustment",
+      "reasoning": "Adding an additional egg yolk can help keep the cookie chewy and moist.",
       "changes_made": [
         {
           "type": "ingredient",
           "from_text": "",
           "to_text": "1 additional egg yolk",
           "operation": "add"
+        },
+        {
+          "type": "technique",
+          "from_text": "Drop spoonfuls of dough",
+          "to_text": "Using an ice cream scoop, drop spoonfuls of dough",
+          "operation": "modify"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "These are awesome cookies. I followed the advice of others by making the following tweaks: (1) I used a half cup of sugar and one-and-a-half cups of brown sugar; (2) I omitted the water; (3) I added a teaspoon of cream of tartar to the batter; (4) I refrigerated the batter for at least an hour before scooping and baking. The cookies retained their shape and didn't spread when baked. I think the cream of tartar made a difference, and the cookies did not come out too cakey either! This recipe is going in my \"favorites\" cookbook.",
+        "reviewer": null,
+        "rating": 5
+      },
+      "modification_type": "ingredient_ratio_and_technique",
+      "reasoning": "Adjusting sugar ratio to favor brown sugar adds more moisture and flavor. Cream of tartar helps with structure. Omitting water and chilling prevents spreading.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "1 cup white sugar",
+          "to_text": "0.5 cup white sugar",
+          "operation": "modify"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "1 cup packed brown sugar",
+          "to_text": "1.5 cups packed brown sugar",
+          "operation": "modify"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "2 teaspoons hot water",
+          "to_text": "",
+          "operation": "remove"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "1 teaspoon cream of tartar",
+          "operation": "add"
+        },
+        {
+          "type": "technique",
+          "from_text": "",
+          "to_text": "Refrigerate the batter for at least an hour before scooping and baking",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "The first batch that I made was a bit bland. But I did love that they weren't flat! They are a nice thick, chewy cookie. The second batch I used 1 tsp. of salt instead of 1/2 tsp. and omitted the nuts. This was better, but still not quite as flavorful at the traditional Tollhouse cookie recipe. I found that if I pressed them down slightly before baking that worked the best.If I were to rate this recipe on look and texture, it would be a 5. But the flavor falls a bit flat for me. I may keep trying to see how I can make it taste better, but maintain the aesthetic.",
+        "reviewer": null,
+        "rating": 3
+      },
+      "modification_type": "flavor_enhancement",
+      "reasoning": "Increasing salt enhances flavor. Making nuts optional accommodates preferences. Pressing before baking improves texture.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "0.5 teaspoon salt",
+          "to_text": "1 teaspoon salt",
+          "operation": "modify"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "1 cup chopped walnuts",
+          "to_text": "1 cup chopped walnuts (optional)",
+          "operation": "modify"
+        },
+        {
+          "type": "technique",
+          "from_text": "",
+          "to_text": "Press down slightly on each cookie before baking",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "I just made these and 😍😋!!!! Changes- used a whole cup of white sugar and 1/2 c of brown (because it's what I had) and 1/2 c less flour after reading some other reviews, and added a tiny dash of cinnamon. They are phenomenal! Crispy edges and gooey center. My husband works from home and he can't stop coming out of his office and trying them!!!! HUGE hit and will be my go to. Thank you!!",
+        "reviewer": null,
+        "rating": 5
+      },
+      "modification_type": "texture_and_flavor_optimization",
+      "reasoning": "Reducing flour creates a more tender texture. Adding cinnamon enhances flavor complexity. This complements the other sugar ratio adjustments.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "3 cups all-purpose flour",
+          "to_text": "2.5 cups all-purpose flour",
+          "operation": "modify"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "tiny dash of cinnamon",
+          "operation": "add"
         }
       ]
     }
   ],
   "enhancement_summary": {
-    "total_changes": 1,
+    "total_changes": 4,
     "change_types": [
-      "addition"
+      "quantity_adjustment",
+      "ingredient_ratio_and_technique",
+      "flavor_enhancement",
+      "texture_and_flavor_optimization"
     ],
-    "expected_impact": "Adding an additional egg yolk helps keep the cookies chewy, improving their texture."
+    "expected_impact": "Comprehensive improvements including: chewier texture from egg yolk, better flavor balance from adjusted sugar ratios, improved structure from cream of tartar, enhanced taste from increased salt and cinnamon, more tender cookies from reduced flour, and better baking techniques including chilling and pressing."
   },
   "description": "This classic chocolate chip cookie recipe makes deliciously buttery cookies with crisp edges, chewy middles, and gooey chocolate chips in every bite.",
   "servings": "48",
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2025-09-25T01:38:11.806705",
+  "created_at": "2025-09-28T22:56:38.647176",
   "pipeline_version": "1.0.0"
 }
