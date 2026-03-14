@@ -55,3 +55,6 @@ memory-bank/
 
 # Scorecard work - sensitive/large files
 scorecardwork/*
+
+# Candidate grading workspace - large files and sensitive data
+candidate-grading/
