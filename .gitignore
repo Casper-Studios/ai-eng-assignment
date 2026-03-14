@@ -52,3 +52,6 @@ scratch.py
 claude.md
 memory-bank/
 .claude/
+
+# Scorecard work - sensitive/large files
+scorecardwork/*
