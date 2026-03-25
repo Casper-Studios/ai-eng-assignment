@@ -16,28 +16,134 @@ This session addressed two high-priority issues in the LLM Analysis Pipeline tha
 
 ## 1. Assumptions Assessment
 
-We identified several critical assumptions in the existing pipeline that were limiting effectiveness:
+We identified several critical assumptions in the existing pipeline that were limiting effectiveness, organized here by priority:
 
-### **Assumption #1: Single Modification Per Recipe is Sufficient**
+### **HIGH PRIORITY ASSUMPTIONS** (Critical impact on output quality or user experience)
+
+### **Assumption #1: Reviews Use Exact Recipe Text in Descriptions**
+- **What we assumed**: Users reference ingredients/instructions using exact wording from the original recipe
+- **Location**: [prompts.py:23](src/llm_pipeline/prompts.py#L23), [recipe_modifier.py:91](src/llm_pipeline/recipe_modifier.py#L91)
+- **Impact**:
+  - ✅ **Success**: String matching works when users quote exactly ("I used 1 cup white sugar instead of...")
+  - ❌ **Failure**: Edits fail when users paraphrase ("I reduced the sugar" instead of "I used 0.5 cup white sugar")
+- **Mitigation**: Fuzzy matching (0.6 threshold) helps but isn't perfect
+- **Risk Level**: 🔴 **High** - Edits fail if users paraphrase ingredients/steps
+- **Status**: ⏳ **IDENTIFIED** - Text normalization planned for next phase
+
+### **Assumption #2: Single Modification Per Recipe is Sufficient**
 - **What we assumed**: Applying one randomly selected community tweak would adequately enhance a recipe
 - **Why it was wrong**: The product promises "Featured Tweaks" (plural) - users expect the best improvements from thousands of reviews, not one random change
 - **Impact**: Under-delivered on value proposition, missed cumulative wisdom of community
+- **Risk Level**: 🔴 **High** - Under-delivers on "Featured Tweaks" promise
 - **Status**: ✅ **FIXED** - Now applies all qualifying modifications
 
-### **Assumption #2: All Flagged Reviews Are Valuable**
+### **Assumption #3: All Flagged Reviews Are Valuable**
 - **What we assumed**: If a review has `has_modification=true`, it's worth applying
 - **Why it was wrong**: No quality filtering - low-rated, inexperienced, or vague suggestions got equal weight with expert advice
 - **Impact**: Risk of applying low-quality or confusing modifications to recipes
+- **Risk Level**: 🔴 **High** - Could apply low-quality changes
 - **Status**: ✅ **FIXED** - Implemented multi-signal quality scoring
 
-### **Assumption #3: Reviews Use Exact Recipe Text**
-- **What users do**: Paraphrase ingredients instead of quoting exactly ("less sugar" vs "0.5 cup white sugar")
-- **Current limitation**: String matching fails on 30-50% of valid modifications
-- **Status**: ⏳ **IDENTIFIED** - Text normalization planned for next phase
+### **MEDIUM PRIORITY ASSUMPTIONS** (Moderate impact, manageable with workarounds)
 
-### **Assumption #4: LLM Consistency Requires Low Temperature**
-- **Current approach**: Temperature set to 0.1 for consistent outputs
+### **Assumption #4: LLM Can Extract Structured Modifications from Natural Language**
+- **What we assumed**: The LLM can reliably convert unstructured review text into precise JSON edit operations with exact text matching
+- **Location**: [prompts.py:8-29](src/llm_pipeline/prompts.py#L8-L29), [tweak_extractor.py:36-111](src/llm_pipeline/tweak_extractor.py#L36-L111)
+- **Impact**:
+  - ✅ **Success**: Clean, parseable modifications when reviews are explicit and well-written
+  - ❌ **Failure**: Missed or incorrect extractions when reviews are vague, sarcastic, or use unconventional language
+- **Risk**: Pipeline fails silently if LLM returns invalid JSON (mitigated by retries)
+- **Risk Level**: 🟡 **Medium** - Incorrect or missing edits if reviews are ambiguous
+- **Status**: ✅ **WORKING WELL** - Retry logic handles most failures
+
+### **Assumption #5: has_modification Flag is Pre-computed and Accurate**
+- **What we assumed**: Input data already marks which reviews contain modifications
+- **Location**: [tweak_extractor.py:53-55](src/llm_pipeline/tweak_extractor.py#L53-L55), [pipeline.py:142-144](src/llm_pipeline/pipeline.py#L142-L144)
+- **Impact**:
+  - ✅ **Success**: Efficient filtering when the flag is correct
+  - ❌ **Failure**: Missed modifications if flag=false but review contains changes; wasted API calls if flag=true but no changes exist
+- **Dependency**: Assumes upstream scraping/data prep is accurate
+- **Risk Level**: 🟡 **Medium** - Wasted API calls or missed tweaks
+- **Status**: ⏳ **IDENTIFIED** - No validation currently implemented
+
+### **Assumption #6: Modifications Are Independent and Can Be Applied Sequentially**
+- **What we assumed**: Multiple modifications don't conflict and can be applied one after another
+- **Location**: [recipe_modifier.py:192-220](src/llm_pipeline/recipe_modifier.py#L192-L220)
+- **Impact**:
+  - ✅ **Success**: Works for simple additive changes (e.g., one changes salt, another adds vanilla)
+  - ❌ **Failure**: Breaks with conflicting edits (e.g., Mod A: "reduce sugar to 0.5 cup", Mod B: "double sugar")
+- **Risk**: Later modifications silently fail if earlier ones change the target text
+- **Risk Level**: 🟡 **Medium** - Conflicts when multiple edits affect same text
+- **Status**: ⏳ **IDENTIFIED** - Conflict detection planned for future phase
+
+### **Assumption #7: Recipe Data is Complete and Well-Formatted**
+- **What we assumed**: Input JSON has required fields (recipe_id, title, ingredients, instructions)
+- **Location**: [pipeline.py:71-89](src/llm_pipeline/pipeline.py#L71-L89)
+- **Impact**:
+  - ✅ **Success**: Smooth parsing when data is clean
+  - ❌ **Failure**: Pipeline crashes or produces partial results if fields are missing
+- **Risk**: No validation for ingredient/instruction formatting (e.g., measurements, units)
+- **Risk Level**: 🟡 **Medium** - Pipeline failures with malformed data
+- **Status**: ⏳ **IDENTIFIED** - Input validation needed
+
+### **Assumption #8: Text Similarity Threshold (0.6) Balances Precision/Recall**
+- **What we assumed**: 60% similarity is the right cutoff for fuzzy matching
+- **Location**: [recipe_modifier.py:25](src/llm_pipeline/recipe_modifier.py#L25), [recipe_modifier.py:60-63](src/llm_pipeline/recipe_modifier.py#L60-L63)
+- **Impact**:
+  - ✅ **Success**: Catches typos and minor paraphrasing
+  - ❌ **Failure**: False positives (matches wrong ingredient) or false negatives (misses valid targets)
+- **Tuning Needed**: Threshold may need adjustment per recipe type
+- **Risk Level**: 🟡 **Medium** - False matches or missed targets
+- **Status**: ⏳ **IDENTIFIED** - Configurable thresholds would help
+
+### **LOW PRIORITY ASSUMPTIONS** (Minor impact, acceptable trade-offs)
+
+### **Assumption #9: Each Review Contains Only One Modification Type**
+- **What we assumed**: A single modification object has a single type (e.g., quantity_adjustment)
+- **Location**: [models.py:35-41](src/llm_pipeline/models.py#L35-L41), [prompts.py:42](src/llm_pipeline/prompts.py#L42)
+- **Impact**:
+  - ✅ **Success**: Clean categorization for simple tweaks
+  - ❌ **Failure**: Complex reviews (e.g., "I substituted butter AND changed the temperature") get forced into one category, losing nuance
+- **Workaround**: The edits list allows multiple atomic operations, but they're all labeled with one type
+- **Risk Level**: 🟢 **Low** - Lost nuance for complex changes
+- **Status**: ✅ **ACCEPTABLE** - Trade-off for simplicity
+
+### **Assumption #10: LLM Consistency Requires Low Temperature**
+- **What we assumed**: Minimal LLM variability ensures reproducible results
+- **Location**: [tweak_extractor.py:72](src/llm_pipeline/tweak_extractor.py#L72)
+- **Impact**:
+  - ✅ **Success**: Consistent outputs for similar reviews
+  - ❌ **Failure**: May miss creative or non-obvious modifications that require higher temperature
+- **Trade-off**: Reliability over creativity
+- **Risk Level**: 🟢 **Low** - May miss creative tweaks
 - **Status**: ✅ **WORKING WELL** - No changes needed
+
+---
+
+### **Assumptions Summary Table**
+
+| # | Assumption | Risk Level | Output Impact | Status |
+|---|-----------|------------|---------------|---------|
+| **High Priority** |||||
+| 1 | Reviews use exact recipe text | 🔴 High | Edits fail if users paraphrase ingredients/steps | ⏳ Text Normalization Planned |
+| 2 | Single modification suffices | 🔴 High | Under-delivers on "Featured Tweaks" promise | ✅ FIXED |
+| 3 | All flagged reviews are valuable | 🔴 High | Could apply low-quality changes | ✅ FIXED |
+| **Medium Priority** |||||
+| 4 | LLM extracts structured changes accurately | 🟡 Medium | Incorrect or missing edits if reviews are ambiguous | ✅ Working Well |
+| 5 | has_modification flag is accurate | 🟡 Medium | Wasted API calls or missed tweaks | ⏳ Needs Validation |
+| 6 | Modifications are independent | 🟡 Medium | Conflicts when multiple edits affect same text | ⏳ Conflict Detection Planned |
+| 7 | Recipe data is well-formatted | 🟡 Medium | Pipeline failures with malformed data | ⏳ Needs Validation |
+| 8 | 0.6 similarity threshold is optimal | 🟡 Medium | False matches or missed targets | ⏳ Configurable Thresholds Needed |
+| **Low Priority** |||||
+| 9 | One modification type per review | 🟢 Low | Lost nuance for complex changes | ✅ Acceptable Trade-off |
+| 10 | Low temperature ensures consistency | 🟢 Low | May miss creative tweaks | ✅ Working Well |
+
+**Legend:**
+- 🔴 **High Risk** - Critical impact on output quality or user experience
+- 🟡 **Medium Risk** - Moderate impact, manageable with workarounds
+- 🟢 **Low Risk** - Minor impact, acceptable trade-offs
+- ✅ **Fixed/Working** - Issue addressed or operating as expected
+- ⏳ **Identified** - Issue recognized, improvements planned
 
 ---
 
