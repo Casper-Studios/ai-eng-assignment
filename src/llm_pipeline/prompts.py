@@ -35,7 +35,13 @@ Instructions: {instructions}
 
 User Review: "{review_text}"
 
-Extract the recipe modifications from this review. The user has made changes to improve the recipe.
+Extract ALL recipe modifications mentioned in this review. Users often make multiple changes - capture each one.
+
+IMPORTANT:
+- The review may contain MULTIPLE modifications - extract ALL of them
+- Include ingredient substitutions, quantity adjustments, additions, and technique changes
+- Don't skip minor changes like garnishes, spices, or finishing touches
+- If they mention using a different ingredient later (e.g., "drizzled heavy cream at the end"), include it
 
 Output a JSON object with this structure:
 {{
@@ -55,6 +61,32 @@ Output a JSON object with this structure:
 Focus on concrete changes the user actually made, not general suggestions."""
 
 FEW_SHOT_EXAMPLES = [
+    {
+        "review": "I made this with canned yams. I added roasted Brussels Sprouts and peppers. I drizzled heavy cream at the end. Loved the contrast of the roasted greens to the sweet and spicy.",
+        "ingredients": [
+            "1.5 pounds peeled raw sweet potatoes, cut into 1-inch chunks",
+            "1 large onion, cut into large dice",
+            "1.5 cups half-and-half (or whole milk)",
+        ],
+        "expected_output": {
+            "modification_type": "ingredient_substitution",
+            "reasoning": "User substituted canned yams for fresh sweet potatoes and added heavy cream for richness",
+            "edits": [
+                {
+                    "target": "ingredients",
+                    "operation": "replace",
+                    "find": "1.5 pounds peeled raw sweet potatoes, cut into 1-inch chunks",
+                    "replace": "1.5 pounds canned yams",
+                },
+                {
+                    "target": "ingredients",
+                    "operation": "add_after",
+                    "find": "1.5 cups half-and-half (or whole milk)",
+                    "add": "heavy cream, for drizzling",
+                },
+            ],
+        },
+    },
     {
         "review": "I used a half cup of sugar and one-and-a-half cups of brown sugar instead of the recipe amounts. Made the cookies much more chewy and flavorful!",
         "ingredients": [
@@ -205,7 +237,13 @@ Instructions: {instructions}
 
 User Review: "{review_text}"
 
-Extract the recipe modifications from this review. The user has made changes to improve the recipe.
+Extract ALL recipe modifications mentioned in this review. Users often make multiple changes - capture each one.
+
+IMPORTANT:
+- The review may contain MULTIPLE modifications - extract ALL of them
+- Include ingredient substitutions, quantity adjustments, additions, and technique changes
+- Don't skip minor changes like garnishes, spices, or finishing touches
+- If they mention using a different ingredient later (e.g., "drizzled heavy cream at the end"), include it
 
 Output a JSON object with this structure:
 {{

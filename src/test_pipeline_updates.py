@@ -2,15 +2,22 @@
 """
 Test script to validate the updated pipeline logic for multiple modifications.
 
-This script tests the pipeline changes without making actual LLM API calls.
+This script now supports processing real recipes and generating enhanced output files.
+
+Usage:
+    python test_pipeline_updates.py single    # Test single chocolate chip cookie recipe
+    python test_pipeline_updates.py all       # Test all recipes in data directory
 """
 
+import os
 import sys
 from pathlib import Path
+from dotenv import load_dotenv
 
 # Add src directory to path
 sys.path.insert(0, str(Path(__file__).parent))
 
+from llm_pipeline.pipeline import LLMAnalysisPipeline
 from llm_pipeline.models import (
     Review, Recipe, ModificationObject, ModificationEdit,
     ChangeRecord, SourceReview, ModificationApplied
@@ -18,6 +25,10 @@ from llm_pipeline.models import (
 from llm_pipeline.recipe_modifier import RecipeModifier
 from llm_pipeline.enhanced_recipe_generator import EnhancedRecipeGenerator
 from llm_pipeline.tweak_extractor import TweakExtractor
+from loguru import logger
+
+# Load environment variables from .env file
+load_dotenv()
 
 
 def create_test_modifications():
@@ -283,33 +294,181 @@ def test_method_exists():
     return True
 
 
-def main():
-    """Run all validation tests."""
-    from loguru import logger
+def test_single_recipe():
+    """Test the pipeline with the chocolate chip cookie recipe."""
 
+    # Check for OpenAI API key
+    if not os.getenv("OPENAI_API_KEY"):
+        logger.error("OPENAI_API_KEY environment variable not set")
+        logger.info("Please set your OpenAI API key in .env file")
+        return False
+
+    # Initialize pipeline
+    try:
+        pipeline = LLMAnalysisPipeline()
+        logger.info("Pipeline initialized successfully")
+    except Exception as e:
+        logger.error(f"Failed to initialize pipeline: {e}")
+        return False
+
+    # Test with chocolate chip cookie recipe
+    recipe_file = "../data/recipe_10813_best-chocolate-chip-cookies.json"
+    if not Path(recipe_file).exists():
+        logger.error(f"Recipe file not found: {recipe_file}")
+        return False
+
+    logger.info(f"Testing with recipe file: {recipe_file}")
+
+    try:
+        # Process the recipe
+        enhanced_recipe = pipeline.process_single_recipe(
+            recipe_file=recipe_file,
+            save_output=True
+        )
+
+        if enhanced_recipe:
+            logger.success("✓ Single recipe test successful!")
+            logger.info(f"Enhanced recipe: {enhanced_recipe.title}")
+            logger.info(f"Modifications applied: {len(enhanced_recipe.modifications_applied)}")
+            logger.info(f"Total changes: {enhanced_recipe.enhancement_summary.total_changes}")
+            logger.info(f"Expected impact: {enhanced_recipe.enhancement_summary.expected_impact}")
+            return True
+        else:
+            logger.error("✗ Single recipe test failed - no enhanced recipe generated")
+            return False
+
+    except Exception as e:
+        logger.error(f"Single recipe test failed with error: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
+def test_all_recipes():
+    """Test the pipeline with all scraped recipes."""
+
+    # Check for OpenAI API key
+    if not os.getenv("OPENAI_API_KEY"):
+        logger.error("OPENAI_API_KEY environment variable not set")
+        logger.info("Please set your OpenAI API key in .env file")
+        return False
+
+    # Initialize pipeline
+    try:
+        pipeline = LLMAnalysisPipeline()
+        logger.info("Pipeline initialized successfully")
+    except Exception as e:
+        logger.error(f"Failed to initialize pipeline: {e}")
+        return False
+
+    try:
+        # Process all recipes
+        enhanced_recipes = pipeline.process_recipe_directory(
+            data_dir="../data"
+        )
+
+        # Generate summary report
+        report_path = pipeline.save_summary_report(enhanced_recipes)
+
+        logger.info(f"\n{'=' * 60}")
+        logger.success("✓ All recipes test complete!")
+        logger.info(f"Enhanced recipes: {len(enhanced_recipes)}")
+        logger.info(f"Summary report saved to: {report_path}")
+
+        return len(enhanced_recipes) > 0
+
+    except Exception as e:
+        logger.error(f"All recipes test failed with error: {e}")
+        import traceback
+        traceback.print_exc()
+        return False
+
+
+def run_validation_tests():
+    """Run the validation tests with mock data."""
     logger.info("Starting Validation Tests for Multiple Modifications")
     logger.info("=" * 60)
 
     # Test 1: Method signature
     if not test_method_exists():
         logger.error("✗ Method signature test failed")
-        return 1
+        return False
 
     # Test 2: Multiple modifications application
     if not test_multiple_modifications_application():
         logger.error("✗ Multiple modifications application test failed")
-        return 1
+        return False
 
     # Test 3: Enhanced recipe generation
     if not test_enhanced_recipe_generation():
         logger.error("✗ Enhanced recipe generation test failed")
-        return 1
+        return False
 
     logger.success("\n✓✓✓ All validation tests passed! ✓✓✓\n")
     logger.info("The pipeline now supports:")
     logger.info("  1. Extracting all high-quality modifications (rating >= 4)")
     logger.info("  2. Applying multiple modifications in batch")
     logger.info("  3. Generating enhanced recipes with full attribution")
+
+    return True
+
+
+def main():
+    """Main test function with mode selection."""
+
+    # Parse command line argument
+    if len(sys.argv) < 2:
+        logger.error("Usage: python test_pipeline_updates.py [single|all|validate]")
+        logger.info("  single   - Test single chocolate chip cookie recipe (generates output)")
+        logger.info("  all      - Test all recipes in data directory (generates output)")
+        logger.info("  validate - Run validation tests with mock data (no API calls)")
+        sys.exit(1)
+
+    mode = sys.argv[1].lower()
+
+    if mode == "single":
+        logger.info("Starting LLM Analysis Pipeline - Single Recipe Test")
+        logger.info("=" * 60)
+        success = test_single_recipe()
+
+        logger.info("=" * 60)
+        if success:
+            logger.success("Single recipe test passed! ✓")
+            logger.info("Check the 'data/enhanced/' directory for the enhanced recipe.")
+        else:
+            logger.error("Single recipe test failed! ✗")
+            sys.exit(1)
+
+    elif mode == "all":
+        logger.info("Starting LLM Analysis Pipeline - All Recipes Validation")
+        logger.info("=" * 60)
+        success = test_all_recipes()
+
+        logger.info("=" * 60)
+        if success:
+            logger.success("All recipes validation passed! ✓")
+            logger.info("Check the 'data/enhanced/' directory for all enhanced recipes.")
+            logger.info("Check 'data/enhanced/pipeline_summary_report.json' for detailed results.")
+        else:
+            logger.error("All recipes validation failed! ✗")
+            sys.exit(1)
+
+    elif mode == "validate":
+        logger.info("Starting Validation Tests (Mock Data)")
+        logger.info("=" * 60)
+        success = run_validation_tests()
+
+        logger.info("=" * 60)
+        if success:
+            logger.success("Validation tests passed! ✓")
+        else:
+            logger.error("Validation tests failed! ✗")
+            sys.exit(1)
+
+    else:
+        logger.error(f"Unknown mode: {mode}")
+        logger.error("Usage: python test_pipeline_updates.py [single|all|validate]")
+        sys.exit(1)
 
     return 0
 

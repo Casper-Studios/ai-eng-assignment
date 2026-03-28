@@ -70,8 +70,8 @@ class TweakExtractor:
                     model=self.model,
                     messages=[{"role": "user", "content": prompt}],
                     response_format={"type": "json_object"},
-                    temperature=0.1,  # Low temperature for consistent extractions
-                    max_tokens=1000,
+                    temperature=0.3,  # Increased for better multi-change extraction
+                    max_tokens=1500,  # Increased to capture more modifications
                 )
 
                 raw_output = response.choices[0].message.content
@@ -90,7 +90,22 @@ class TweakExtractor:
                     f"Successfully extracted {modification.modification_type} "
                     f"modification with {len(modification.edits)} edits"
                 )
-                return modification
+
+                # Supplement with pattern validation to catch missed modifications
+                from .pattern_validator import PatternValidator
+                validator = PatternValidator()
+                supplemented = validator.supplement_extraction(
+                    review.text,
+                    modification,
+                    recipe.ingredients
+                )
+
+                if supplemented.edits != modification.edits:
+                    logger.info(
+                        f"Pattern validation added {len(supplemented.edits) - len(modification.edits)} edits"
+                    )
+
+                return supplemented
 
             except json.JSONDecodeError as e:
                 logger.warning(f"Attempt {attempt + 1}: Failed to parse JSON: {e}")
