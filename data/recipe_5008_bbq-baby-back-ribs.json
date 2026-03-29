@@ -1,0 +1,59 @@
+{
+  "recipe_id": "5008",
+  "title": "BBQ Baby Back Ribs",
+  "cuisine": "American",
+  "ingredients": [
+    "2 racks baby back ribs",
+    "2 tbsp brown sugar",
+    "1 tbsp paprika",
+    "1 tbsp garlic powder",
+    "1 tsp chili powder",
+    "1 cup BBQ sauce",
+    "1/4 cup apple cider vinegar"
+  ],
+  "instructions": [
+    "Remove membrane from ribs.",
+    "Rub with spice mixture.",
+    "Grill low and slow for 3 hours.",
+    "Brush with BBQ sauce.",
+    "Rest and serve."
+  ],
+  "reviews": [
+    {
+      "username": "Pitmaster",
+      "rating": 5,
+      "text": "Fall-off-the-bone tender! I added a splash of apple cider vinegar to the BBQ sauce and a dash of smoked paprika. Also drizzled with honey at the end.",
+      "has_modification": true
+    },
+    {
+      "username": "BBQLover",
+      "rating": 4,
+      "text": "Great ribs! Added extra brown sugar and a pinch of cayenne. Served with coleslaw and cornbread.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie129",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook990",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic579",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed697",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "recipe_id": "5015",
+  "title": "Doro Wat",
+  "cuisine": "Ethiopian",
+  "ingredients": [
+    "1 whole chicken",
+    "4 onions",
+    "4 tbsp berbere spice",
+    "4 tbsp niter kibbeh",
+    "4 garlic cloves",
+    "1 inch ginger",
+    "4 hard-boiled eggs",
+    "Injera flatbread"
+  ],
+  "instructions": [
+    "Cook onions slowly until browned.",
+    "Add berbere and niter kibbeh.",
+    "Add chicken and cook.",
+    "Add garlic and ginger.",
+    "Simmer until chicken is done.",
+    "Add eggs and serve with injera."
+  ],
+  "reviews": [
+    {
+      "username": "EthiopianChef",
+      "rating": 5,
+      "text": "Incredible! Added a splash of lemon juice and a pinch of cardamom. Also added a dash of berbere and topped with fresh cilantro.",
+      "has_modification": true
+    },
+    {
+      "username": "SpicyFoodie",
+      "rating": 4,
+      "text": "Used extra berbere for more heat. Added a splash of water and a pinch of salt. Served with extra injera.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie578",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook906",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic778",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed251",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

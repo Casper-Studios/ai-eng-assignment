@@ -1,0 +1,110 @@
+{
+  "recipe_id": "5014_enhanced",
+  "original_recipe_id": "5014",
+  "title": "Kibbeh (Community Enhanced)",
+  "ingredients": [
+    "2 lb bulgur wheat",
+    "pinch of cumin",
+    "sprinkle of fresh",
+    "1 lb ground beef",
+    "1 lb ground lamb",
+    "2 onions",
+    "1 tsp allspice",
+    "dash of allspice",
+    "1 tsp cinnamon",
+    "1/2 cup pine nuts",
+    "Vegetable oil",
+    "sprinkle of fresh mint",
+    "pinch of sumac",
+    "splash of lemon juice"
+  ],
+  "instructions": [
+    "Soak bulgur in water.",
+    "Mix bulgur with meat and spices.",
+    "Make filling with meat, onions, nuts.",
+    "Form into football shapes.",
+    "Bake in the oven until cooked through and slightly crispy.",
+    "Serve with yogurt sauce."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Perfect kibbeh! Added a splash of lemon juice and a pinch of sumac. Also added a dash of allspice and a sprinkle of fresh mint.",
+        "reviewer": "LebaneseCook",
+        "rating": 5
+      },
+      "modification_type": "addition",
+      "reasoning": "The user added additional flavors to enhance the taste of the kibbeh.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "dash of allspice",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "splash of lemon juice",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "pinch of sumac",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "sprinkle of fresh mint",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "sprinkle of fresh",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Baked instead of fried for a lighter version. Added extra pine nuts and a pinch of cumin. Served with tahini sauce.",
+        "reviewer": "MiddleEasternFan",
+        "rating": 4
+      },
+      "modification_type": "technique_change",
+      "reasoning": "Baking instead of frying creates a lighter version of the dish.",
+      "changes_made": [
+        {
+          "type": "instruction",
+          "from_text": "Fry until golden brown.",
+          "to_text": "Bake in the oven until cooked through and slightly crispy.",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "pinch of cumin",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 7,
+    "change_types": [
+      "technique_change",
+      "addition"
+    ],
+    "expected_impact": "The user added additional flavors to enhance the taste of the kibbeh.; Baking instead of frying creates a lighter version of the dish."
+  },
+  "description": null,
+  "servings": null,
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2026-03-28T17:52:55.589256",
+  "pipeline_version": "1.3.0-test"
+}

@@ -1,0 +1,60 @@
+{
+  "recipe_id": "5004",
+  "title": "Butter Chicken (Murgh Makhani)",
+  "cuisine": "Indian",
+  "ingredients": [
+    "2 lb chicken thighs, cubed",
+    "1 cup yogurt",
+    "2 tbsp garam masala",
+    "1 tbsp turmeric",
+    "2 cups tomato puree",
+    "1 cup heavy cream",
+    "4 tbsp butter",
+    "1 tbsp ginger-garlic paste"
+  ],
+  "instructions": [
+    "Marinate chicken in yogurt and spices.",
+    "Grill or bake chicken pieces.",
+    "Make sauce with butter, tomato, ginger-garlic.",
+    "Add cream and simmer.",
+    "Add chicken to sauce and serve."
+  ],
+  "reviews": [
+    {
+      "username": "DesiChef",
+      "rating": 5,
+      "text": "Restaurant quality! I used coconut milk instead of heavy cream for a lighter version. Added a pinch of kasuri methi (dried fenugreek) at the end.",
+      "has_modification": true
+    },
+    {
+      "username": "SpicyQueen",
+      "rating": 4,
+      "text": "Delicious! Added extra garam masala and a dash of cream at the end. Served over basmati rice with naan.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie332",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook532",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic832",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed309",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

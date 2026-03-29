@@ -1,0 +1,60 @@
+{
+  "recipe_id": "5003",
+  "title": "Carne Asada Tacos",
+  "cuisine": "Mexican",
+  "ingredients": [
+    "1.5 lb flank steak",
+    "3 limes, juiced",
+    "4 orange juice",
+    "6 garlic cloves, minced",
+    "1 tsp cumin",
+    "1 tsp chili powder",
+    "Corn tortillas",
+    "Cilantro, onions, salsa for serving"
+  ],
+  "instructions": [
+    "Marinate steak in citrus mixture for 4 hours.",
+    "Grill steak over high heat.",
+    "Let rest, then slice against the grain.",
+    "Warm tortillas.",
+    "Assemble tacos with toppings."
+  ],
+  "reviews": [
+    {
+      "username": "TacoKing",
+      "rating": 5,
+      "text": "Best tacos ever! Marinated for 24 hours instead of 4. Added a dash of cumin and squeeze of lime right before serving.",
+      "has_modification": true
+    },
+    {
+      "username": "GrillMaster",
+      "rating": 4,
+      "text": "Great flavor! I topped with cotija cheese and a drizzle of sour cream. Next time will add more jalapenos.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie123",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook860",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic158",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed540",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

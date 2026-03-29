@@ -1,0 +1,103 @@
+{
+  "recipe_id": "5015_enhanced",
+  "original_recipe_id": "5015",
+  "title": "Doro Wat (Community Enhanced)",
+  "ingredients": [
+    "1 whole chicken",
+    "pinch of salt",
+    "dash of berbere and",
+    "4 onions",
+    "extra berbere spice",
+    "a dash of berbere",
+    "4 tbsp niter kibbeh",
+    "4 garlic cloves",
+    "1 inch ginger",
+    "4 hard-boiled eggs",
+    "Injera flatbread",
+    "topped with fresh cilantro"
+  ],
+  "instructions": [
+    "Cook onions slowly until browned.",
+    "Add berbere and niter kibbeh.",
+    "Add chicken and cook.",
+    "Add garlic and ginger.",
+    "Simmer until chicken is done.",
+    "Add eggs and serve with injera.",
+    "Also added a splash of lemon juice and a pinch of cardamom."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Incredible! Added a splash of lemon juice and a pinch of cardamom. Also added a dash of berbere and topped with fresh cilantro.",
+        "reviewer": "EthiopianChef",
+        "rating": 5
+      },
+      "modification_type": "addition",
+      "reasoning": "The user added additional flavors to enhance the dish.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "a dash of berbere",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "topped with fresh cilantro",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Also added a splash of lemon juice and a pinch of cardamom.",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "dash of berbere and",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Used extra berbere for more heat. Added a splash of water and a pinch of salt. Served with extra injera.",
+        "reviewer": "SpicyFoodie",
+        "rating": 4
+      },
+      "modification_type": "quantity_adjustment",
+      "reasoning": "User wanted more heat in the dish",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "4 tbsp berbere spice",
+          "to_text": "extra berbere spice",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "pinch of salt",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 6,
+    "change_types": [
+      "quantity_adjustment",
+      "addition"
+    ],
+    "expected_impact": "The user added additional flavors to enhance the dish.; User wanted more heat in the dish"
+  },
+  "description": null,
+  "servings": null,
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2026-03-28T17:52:58.252522",
+  "pipeline_version": "1.3.0-test"
+}

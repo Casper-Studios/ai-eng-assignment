@@ -1,0 +1,95 @@
+{
+  "recipe_id": "5006_enhanced",
+  "original_recipe_id": "5006",
+  "title": "Tonkotsu Ramen (Community Enhanced)",
+  "ingredients": [
+    "3 qt chicken broth",
+    "dash of chili oil",
+    "1 lb pork belly",
+    "4 packages ramen noodles",
+    "6 soft-boiled eggs",
+    ", corn, butter",
+    "4 green onions, sliced",
+    "2 cups nori sheets",
+    "1 cup soy sauce",
+    "1 tbsp mirin",
+    "topped with corn and"
+  ],
+  "instructions": [
+    "Boil pork bones for 12 hours.",
+    "Chashu: braise pork belly in soy sauce.",
+    "Cook ramen noodles.",
+    "Assemble bowls with broth, noodles, toppings.",
+    "Add soft-boiled egg, nori, green onions.",
+    " Also added a splash of sesame oil at the end and a dash of chili oil for heat."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Incredible! I added a splash of sesame oil at the end and topped with corn and butter. Also added a dash of chili oil for heat.",
+        "reviewer": "RamenMaster",
+        "rating": 5
+      },
+      "modification_type": "addition",
+      "reasoning": "The user added additional toppings to enhance flavor and texture.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": ", corn, butter",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": " Also added a splash of sesame oil at the end and a dash of chili oil for heat.",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "dash of chili oil",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "topped with corn and",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Used chicken broth instead of pork for a lighter version. Added extra green onions and a squeeze of lime.",
+        "reviewer": "NoodleFan",
+        "rating": 4
+      },
+      "modification_type": "ingredient_substitution",
+      "reasoning": "User opted for a lighter broth by using chicken instead of pork.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "3 lb pork bones",
+          "to_text": "3 qt chicken broth",
+          "operation": "replace"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 5,
+    "change_types": [
+      "ingredient_substitution",
+      "addition"
+    ],
+    "expected_impact": "The user added additional toppings to enhance flavor and texture.; User opted for a lighter broth by using chicken instead of pork."
+  },
+  "description": null,
+  "servings": null,
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2026-03-28T17:52:32.595350",
+  "pipeline_version": "1.3.0-test"
+}

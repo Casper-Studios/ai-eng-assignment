@@ -1,0 +1,60 @@
+{
+  "recipe_id": "5017",
+  "title": "Ceviche de Pescado",
+  "cuisine": "Peruvian",
+  "ingredients": [
+    "1 lb white fish",
+    "1 cup lime juice",
+    "1 red onion",
+    "1 jalapeno",
+    "1 cilantro bunch",
+    "1 tsp salt",
+    "Corn and sweet potato"
+  ],
+  "instructions": [
+    "Marinate fish in lime juice.",
+    "Let cure for 20 minutes.",
+    "Add onion, jalapeno, cilantro.",
+    "Season with salt.",
+    "Serve immediately.",
+    "Accompany with corn and sweet potato."
+  ],
+  "reviews": [
+    {
+      "username": "PeruvianChef",
+      "rating": 5,
+      "text": "Fresh and perfect! Added a splash of lime juice and a pinch of chili powder. Also added a dash of hot sauce and topped with extra cilantro.",
+      "has_modification": true
+    },
+    {
+      "username": "CevicheLover",
+      "rating": 4,
+      "text": "Added shrimp and scallops. Added extra jalapeno and a pinch of cumin. Served with plantain chips.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie397",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook908",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic242",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed220",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

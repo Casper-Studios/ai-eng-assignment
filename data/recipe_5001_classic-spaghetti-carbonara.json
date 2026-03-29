@@ -1,0 +1,60 @@
+{
+  "recipe_id": "5001",
+  "title": "Classic Spaghetti Carbonara",
+  "cuisine": "Italian",
+  "ingredients": [
+    "1 lb spaghetti",
+    "6 oz pancetta or guanciale, diced",
+    "4 large egg yolks",
+    "1 cup Pecorino Romano cheese, grated",
+    "1/2 cup Parmesan cheese, grated",
+    "Freshly ground black pepper",
+    "Salt"
+  ],
+  "instructions": [
+    "Bring a large pot of salted water to boil.",
+    "Cook spaghetti until al dente.",
+    "Fry pancetta until crisp.",
+    "Whisk egg yolks with cheeses and pepper.",
+    "Toss hot pasta with pancetta, remove from heat.",
+    "Add egg mixture and toss quickly."
+  ],
+  "reviews": [
+    {
+      "username": "ChefMario",
+      "rating": 5,
+      "text": "Absolutely perfect! I used thick-cut bacon instead of pancetta and added a splash of pasta water at the end. The consistency was creamy and delicious.",
+      "has_modification": true
+    },
+    {
+      "username": "HomeCook123",
+      "rating": 4,
+      "text": "Good recipe but needed more salt. I added extra Pecorino and a pinch of red pepper flakes for some heat.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie404",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook671",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic920",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed970",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

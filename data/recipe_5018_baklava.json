@@ -1,0 +1,61 @@
+{
+  "recipe_id": "5018",
+  "title": "Baklava",
+  "cuisine": "Turkish",
+  "ingredients": [
+    "1 package phyllo dough",
+    "2 cups pistachios",
+    "1 cup sugar",
+    "1 tsp cinnamon",
+    "1 cup butter",
+    "1 cup water",
+    "1 cup sugar",
+    "1 lemon juice"
+  ],
+  "instructions": [
+    "Mix nuts with sugar and cinnamon.",
+    "Layer phyllo with butter.",
+    "Add nut mixture.",
+    "Repeat layers.",
+    "Cut before baking.",
+    "Make syrup and pour hot over cold baklava."
+  ],
+  "reviews": [
+    {
+      "username": "TurkishChef",
+      "rating": 5,
+      "text": "Perfect baklava! Added a splash of lemon juice and a pinch of cardamom to the syrup. Also added a dash of rose water and topped with extra pistachios.",
+      "has_modification": true
+    },
+    {
+      "username": "DessertLover",
+      "rating": 4,
+      "text": "Used walnuts instead of pistachios. Added extra cinnamon and a pinch of clove. Served with vanilla ice cream.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie350",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook903",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic445",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed394",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

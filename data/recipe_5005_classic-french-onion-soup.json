@@ -1,0 +1,61 @@
+{
+  "recipe_id": "5005",
+  "title": "Classic French Onion Soup",
+  "cuisine": "French",
+  "ingredients": [
+    "6 large yellow onions, sliced",
+    "4 tbsp butter",
+    "1 tsp sugar",
+    "6 cups beef broth",
+    "1/2 cup white wine",
+    "1 bay leaf",
+    "1 thyme sprig",
+    "French bread, Gruyere cheese"
+  ],
+  "instructions": [
+    "Caramelize onions slowly in butter.",
+    "Add sugar and continue cooking.",
+    "Deglaze with wine.",
+    "Add broth and herbs, simmer.",
+    "Toast bread with cheese.",
+    "Serve soup topped with bread."
+  ],
+  "reviews": [
+    {
+      "username": "FrenchCook",
+      "rating": 5,
+      "text": "Perfect! I added a splash of sherry instead of white wine and a pinch of nutmeg to deepen the flavor. Also drizzled with balsamic before serving.",
+      "has_modification": true
+    },
+    {
+      "username": "SoupLover",
+      "rating": 4,
+      "text": "Great recipe! Used a combination of Swiss and Gruyere. Added a dash of Worcestershire sauce for umami.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie525",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook824",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic237",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed456",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

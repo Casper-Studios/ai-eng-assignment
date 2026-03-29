@@ -1,0 +1,61 @@
+{
+  "recipe_id": "5016",
+  "title": "Pierogi Ruskie",
+  "cuisine": "Polish",
+  "ingredients": [
+    "2 cups flour",
+    "1 egg",
+    "1/2 cup sour cream",
+    "4 potatoes",
+    "1 cup cheese",
+    "1 onion",
+    "Butter for serving",
+    "Sour cream for serving"
+  ],
+  "instructions": [
+    "Make dough with flour, egg, sour cream.",
+    "Boil and mash potatoes.",
+    "Mix with cheese and caramelized onion.",
+    "Roll dough and fill.",
+    "Boil pierogi.",
+    "Serve with butter and sour cream."
+  ],
+  "reviews": [
+    {
+      "username": "PolishChef",
+      "rating": 5,
+      "text": "Just like grandma's! Added a pinch of salt and a dash of pepper. Also added a splash of sour cream and topped with fried onions.",
+      "has_modification": true
+    },
+    {
+      "username": "DumplingLover",
+      "rating": 4,
+      "text": "Added bacon and cheddar cheese. Also added a pinch of garlic powder and a drizzle of melted butter.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie908",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook693",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic473",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed350",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

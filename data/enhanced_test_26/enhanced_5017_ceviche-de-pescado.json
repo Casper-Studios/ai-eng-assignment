@@ -1,0 +1,116 @@
+{
+  "recipe_id": "5017_enhanced",
+  "original_recipe_id": "5017",
+  "title": "Ceviche de Pescado (Community Enhanced)",
+  "ingredients": [
+    "1 lb white fish",
+    "pinch of cumin",
+    "dash of hot sauce",
+    "1 cup lime juice",
+    "splash of lime juice",
+    "1 red onion",
+    "1 jalapeno",
+    "1/2 lb shrimp, 1/2 lb scallops",
+    "1 cilantro bunch",
+    "1 tsp salt",
+    "pinch of chili powder",
+    "Corn and sweet potato",
+    "topped with extra cilantro"
+  ],
+  "instructions": [
+    "Marinate fish in lime juice.",
+    "Let cure for 20 minutes.",
+    "Add onion, jalapeno, cilantro.",
+    "Season with salt.",
+    "Also added a dash of hot sauce.",
+    "Serve immediately.",
+    "Topped with extra cilantro.",
+    "Accompany with corn and sweet potato."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Fresh and perfect! Added a splash of lime juice and a pinch of chili powder. Also added a dash of hot sauce and topped with extra cilantro.",
+        "reviewer": "PeruvianChef",
+        "rating": 5
+      },
+      "modification_type": "addition",
+      "reasoning": "Enhances the flavor profile and adds a spicy kick to the dish.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "splash of lime juice",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "pinch of chili powder",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Also added a dash of hot sauce.",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Topped with extra cilantro.",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "dash of hot sauce",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "topped with extra cilantro",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Added shrimp and scallops. Added extra jalapeno and a pinch of cumin. Served with plantain chips.",
+        "reviewer": "CevicheLover",
+        "rating": 4
+      },
+      "modification_type": "addition",
+      "reasoning": "Enhances the seafood flavor profile of the dish",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "1/2 lb shrimp, 1/2 lb scallops",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "pinch of cumin",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 8,
+    "change_types": [
+      "addition"
+    ],
+    "expected_impact": "Enhances the flavor profile and adds a spicy kick to the dish.; Enhances the seafood flavor profile of the dish"
+  },
+  "description": null,
+  "servings": null,
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2026-03-28T17:53:04.825080",
+  "pipeline_version": "1.3.0-test"
+}

@@ -1,0 +1,62 @@
+{
+  "recipe_id": "5010",
+  "title": "Seafood Paella",
+  "cuisine": "Spanish",
+  "ingredients": [
+    "2 cups bomba rice",
+    "1 lb shrimp",
+    "1 lb mussels",
+    "1/2 lb chorizo",
+    "4 cups fish stock",
+    "1 tsp saffron",
+    "1 onion, diced",
+    "4 garlic cloves, minced",
+    "1 cup frozen peas"
+  ],
+  "instructions": [
+    "Toast saffron in hot stock.",
+    "Cook chorizo, onion, garlic.",
+    "Add rice and toast.",
+    "Add stock and simmer.",
+    "Add seafood in last 10 minutes.",
+    "Let rest before serving."
+  ],
+  "reviews": [
+    {
+      "username": "SpanishChef",
+      "rating": 5,
+      "text": "Perfect paella! Added a splash of white wine and a pinch of smoked paprika. Also added a dash of lemon juice before serving.",
+      "has_modification": true
+    },
+    {
+      "username": "SeafoodLover",
+      "rating": 4,
+      "text": "Added scallops and calamari. Used a pinch of saffron and a drizzle of olive oil at the end.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie324",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook436",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic843",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed778",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

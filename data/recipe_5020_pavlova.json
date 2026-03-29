@@ -1,0 +1,60 @@
+{
+  "recipe_id": "5020",
+  "title": "Pavlova",
+  "cuisine": "Australian",
+  "ingredients": [
+    "4 egg whites",
+    "1 cup sugar",
+    "1 tsp vinegar",
+    "1 tsp cornstarch",
+    "1 tsp vanilla",
+    "1 cup heavy cream",
+    "Fresh fruits"
+  ],
+  "instructions": [
+    "Beat egg whites until soft peaks.",
+    "Gradually add sugar.",
+    "Fold in vinegar, cornstarch, vanilla.",
+    "Bake at low heat for 1 hour.",
+    "Cool in oven.",
+    "Top with whipped cream and fruits."
+  ],
+  "reviews": [
+    {
+      "username": "AustralianChef",
+      "rating": 5,
+      "text": "Perfect pavlova! Added a splash of vanilla and a pinch of salt. Also added a dash of lemon zest and topped with passion fruit.",
+      "has_modification": true
+    },
+    {
+      "username": "DessertLover",
+      "rating": 4,
+      "text": "Used berries and kiwi for topping. Added extra vanilla and a pinch of cream of tartar. Served with mango coulis.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie414",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook499",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic579",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed910",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

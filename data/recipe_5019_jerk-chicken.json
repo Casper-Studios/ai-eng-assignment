@@ -1,0 +1,63 @@
+{
+  "recipe_id": "5019",
+  "title": "Jerk Chicken",
+  "cuisine": "Jamaican",
+  "ingredients": [
+    "2 lb chicken thighs",
+    "2 scotch bonnet peppers",
+    "1 onion",
+    "4 garlic cloves",
+    "1 inch ginger",
+    "2 tbsp allspice",
+    "1 tbsp thyme",
+    "1 cinnamon stick",
+    "2 tbsp soy sauce",
+    "2 tbsp brown sugar"
+  ],
+  "instructions": [
+    "Blend peppers, onion, garlic, ginger.",
+    "Add spices and marinade chicken.",
+    "Let marinate 4 hours.",
+    "Grill over charcoal.",
+    "Baste with remaining marinade.",
+    "Serve with rice and peas."
+  ],
+  "reviews": [
+    {
+      "username": "JamaicanChef",
+      "rating": 5,
+      "text": "Authentic heat! Added a splash of soy sauce and a pinch of nutmeg. Also added a dash of lime juice and topped with green onions.",
+      "has_modification": true
+    },
+    {
+      "username": "SpicyFoodie",
+      "rating": 4,
+      "text": "Reduced scotch bonnet peppers for less heat. Added extra brown sugar and a pinch of paprika. Served with mango salsa.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie913",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook140",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic491",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed908",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

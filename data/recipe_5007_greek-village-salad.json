@@ -1,0 +1,60 @@
+{
+  "recipe_id": "5007",
+  "title": "Greek Village Salad",
+  "cuisine": "Greek",
+  "ingredients": [
+    "4 large tomatoes, chunked",
+    "1 cucumber, sliced",
+    "1 red onion, sliced",
+    "1 cup Kalamata olives",
+    "8 oz feta cheese, cubed",
+    "1/4 cup olive oil",
+    "2 tbsp red wine vinegar",
+    "1 tsp dried oregano"
+  ],
+  "instructions": [
+    "Combine vegetables in a large bowl.",
+    "Add olives and feta.",
+    "Whisk oil and vinegar.",
+    "Toss salad with dressing.",
+    "Sprinkle with oregano."
+  ],
+  "reviews": [
+    {
+      "username": "GreekChef",
+      "rating": 5,
+      "text": "Perfect summer salad! Added a splash of red wine vinegar and a pinch of sea salt. Also added capers and fresh mint.",
+      "has_modification": true
+    },
+    {
+      "username": "MediterraneanFan",
+      "rating": 4,
+      "text": "Added bell peppers and a drizzle of balsamic glaze. Used sheep's milk feta for extra creaminess.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie933",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook259",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic162",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed458",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

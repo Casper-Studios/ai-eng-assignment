@@ -1,0 +1,62 @@
+{
+  "recipe_id": "5012",
+  "title": "Bibimbap",
+  "cuisine": "Korean",
+  "ingredients": [
+    "2 cups cooked rice",
+    "1 lb beef bulgogi",
+    "1 cup spinach",
+    "1 cup bean sprouts",
+    "1 carrot",
+    "1 zucchini",
+    "4 eggs",
+    "Gochujang sauce",
+    "Sesame oil"
+  ],
+  "instructions": [
+    "Season and cook vegetables.",
+    "Cook bulgogi.",
+    "Fry eggs.",
+    "Arrange rice in bowl.",
+    "Top with vegetables, beef, egg.",
+    "Serve with gochujang."
+  ],
+  "reviews": [
+    {
+      "username": "KoreanChef",
+      "rating": 5,
+      "text": "Restaurant quality at home! Added a splash of sesame oil and a pinch of gochugaru. Also added a dash of soy sauce and topped with sesame seeds.",
+      "has_modification": true
+    },
+    {
+      "username": "BibimbapLover",
+      "rating": 4,
+      "text": "Used tofu instead of beef. Added extra vegetables and a drizzle of chili oil. Served with kimchi on the side.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie253",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook793",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic618",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed662",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "recipe_id": "5005_enhanced",
+  "original_recipe_id": "5005",
+  "title": "Classic French Onion Soup (Community Enhanced)",
+  "ingredients": [
+    "splash of sherry instead",
+    "4 tbsp butter",
+    "1 tsp sugar",
+    "pinch of nutmeg to",
+    "6 cups beef broth",
+    "a splash of sherry",
+    "1 bay leaf",
+    "1 thyme sprig",
+    "French bread, Swiss and Gruyere cheese",
+    "drizzled with balsamic before"
+  ],
+  "instructions": [
+    "Caramelize onions slowly in butter.",
+    "Add sugar and continue cooking.",
+    "Deglaze with wine.",
+    "Add broth and herbs, simmer.",
+    "Toast bread with cheese.",
+    "Serve soup topped with bread."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Perfect! I added a splash of sherry instead of white wine and a pinch of nutmeg to deepen the flavor. Also drizzled with balsamic before serving.",
+        "reviewer": "FrenchCook",
+        "rating": 5
+      },
+      "modification_type": "ingredient_substitution",
+      "reasoning": "To deepen the flavor and add a different taste profile",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "1/2 cup white wine",
+          "to_text": "a splash of sherry",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "drizzled with balsamic before",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "pinch of nutmeg to",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "6 large yellow onions, sliced",
+          "to_text": "splash of sherry instead",
+          "operation": "replace"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Great recipe! Used a combination of Swiss and Gruyere. Added a dash of Worcestershire sauce for umami.",
+        "reviewer": "SoupLover",
+        "rating": 4
+      },
+      "modification_type": "ingredient_substitution",
+      "reasoning": "User preferred a combination of Swiss and Gruyere cheese for a different flavor profile.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "French bread, Gruyere cheese",
+          "to_text": "French bread, Swiss and Gruyere cheese",
+          "operation": "replace"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 5,
+    "change_types": [
+      "ingredient_substitution"
+    ],
+    "expected_impact": "To deepen the flavor and add a different taste profile; User preferred a combination of Swiss and Gruyere cheese for a different flavor profile."
+  },
+  "description": null,
+  "servings": null,
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2026-03-28T17:52:30.194240",
+  "pipeline_version": "1.3.0-test"
+}

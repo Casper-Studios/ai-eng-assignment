@@ -1,0 +1,82 @@
+{
+  "recipe_id": "5001_enhanced",
+  "original_recipe_id": "5001",
+  "title": "Classic Spaghetti Carbonara (Community Enhanced)",
+  "ingredients": [
+    "1 lb spaghetti",
+    "pinch of red pepper",
+    "splash of pasta water",
+    "6 oz pancetta or guanciale, diced",
+    "4 large egg yolks",
+    "1 cup Pecorino Romano cheese, grated",
+    "extra Pecorino and a pinch of red pepper flakes",
+    "1/2 cup Parmesan cheese, grated",
+    "Freshly ground black pepper",
+    "Salt"
+  ],
+  "instructions": [
+    "Bring a large pot of salted water to boil.",
+    "Cook spaghetti until al dente.",
+    "Fry pancetta until crisp.",
+    "Whisk egg yolks with cheeses and pepper.",
+    "Toss hot pasta with pancetta, remove from heat.",
+    "Add egg mixture and toss quickly."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Absolutely perfect! I used thick-cut bacon instead of pancetta and added a splash of pasta water at the end. The consistency was creamy and delicious.",
+        "reviewer": "ChefMario",
+        "rating": 5
+      },
+      "modification_type": "ingredient_substitution",
+      "reasoning": "User preferred the taste and texture of thick-cut bacon over pancetta",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "splash of pasta water",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Good recipe but needed more salt. I added extra Pecorino and a pinch of red pepper flakes for some heat.",
+        "reviewer": "HomeCook123",
+        "rating": 4
+      },
+      "modification_type": "addition",
+      "reasoning": "To add more flavor and heat to the dish",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "extra Pecorino and a pinch of red pepper flakes",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "pinch of red pepper",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 3,
+    "change_types": [
+      "ingredient_substitution",
+      "addition"
+    ],
+    "expected_impact": "User preferred the taste and texture of thick-cut bacon over pancetta; To add more flavor and heat to the dish"
+  },
+  "description": null,
+  "servings": null,
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2026-03-28T17:52:19.965733",
+  "pipeline_version": "1.3.0-test"
+}
