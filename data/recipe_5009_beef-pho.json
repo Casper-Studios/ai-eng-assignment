@@ -1,0 +1,61 @@
+{
+  "recipe_id": "5009",
+  "title": "Beef Pho",
+  "cuisine": "Vietnamese",
+  "ingredients": [
+    "3 lb beef bones",
+    "1 lb beef brisket",
+    "1 star anise",
+    "1 cinnamon stick",
+    "4 cloves",
+    "1 onion, charred",
+    "1 lb rice noodles",
+    "Bean sprouts, basil, lime for serving"
+  ],
+  "instructions": [
+    "Roast bones and onion.",
+    "Simmer bones with spices for 6 hours.",
+    "Slice brisket thin.",
+    "Cook noodles.",
+    "Assemble bowls with broth, noodles, meat.",
+    "Serve with herbs and condiments."
+  ],
+  "reviews": [
+    {
+      "username": "PhoFanatic",
+      "rating": 5,
+      "text": "Authentic taste! Added a splash of fish sauce and a pinch of sugar. Added a dash of hoisin sauce and squeeze of lime before eating.",
+      "has_modification": true
+    },
+    {
+      "username": "SoupLover",
+      "rating": 4,
+      "text": "Used chicken broth instead of beef. Added extra cinnamon and a pinch of star anise. Topped with sliced jalapenos.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie898",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook850",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic593",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed525",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

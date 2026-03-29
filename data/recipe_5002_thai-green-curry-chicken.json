@@ -1,0 +1,60 @@
+{
+  "recipe_id": "5002",
+  "title": "Thai Green Curry Chicken",
+  "cuisine": "Thai",
+  "ingredients": [
+    "1 lb chicken breast, sliced",
+    "2 tbsp green curry paste",
+    "400ml coconut milk",
+    "1 cup bamboo shoots",
+    "1 cup Thai basil leaves",
+    "2 tbsp fish sauce",
+    "1 tbsp palm sugar",
+    "2 kaffir lime leaves"
+  ],
+  "instructions": [
+    "Heat curry paste in a wok until fragrant.",
+    "Add chicken and cook through.",
+    "Pour in coconut milk and simmer.",
+    "Add bamboo shoots and seasonings.",
+    "Stir in Thai basil just before serving."
+  ],
+  "reviews": [
+    {
+      "username": "SpicyFoodie",
+      "rating": 5,
+      "text": "Amazing curry! I added a dash of fish sauce and squeeze of lime juice at the end for extra brightness. Also threw in some baby corn and bell peppers.",
+      "has_modification": true
+    },
+    {
+      "username": "CurryLover",
+      "rating": 4,
+      "text": "Used 2% milk instead of coconut milk for a lighter version. Added extra curry paste and topped with crushed peanuts.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie422",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook366",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic667",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed558",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

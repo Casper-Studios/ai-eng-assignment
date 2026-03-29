@@ -1,0 +1,60 @@
+{
+  "recipe_id": "5006",
+  "title": "Tonkotsu Ramen",
+  "cuisine": "Japanese",
+  "ingredients": [
+    "3 lb pork bones",
+    "1 lb pork belly",
+    "4 packages ramen noodles",
+    "6 soft-boiled eggs",
+    "4 green onions, sliced",
+    "2 cups nori sheets",
+    "1 cup soy sauce",
+    "1 tbsp mirin"
+  ],
+  "instructions": [
+    "Boil pork bones for 12 hours.",
+    "Chashu: braise pork belly in soy sauce.",
+    "Cook ramen noodles.",
+    "Assemble bowls with broth, noodles, toppings.",
+    "Add soft-boiled egg, nori, green onions."
+  ],
+  "reviews": [
+    {
+      "username": "RamenMaster",
+      "rating": 5,
+      "text": "Incredible! I added a splash of sesame oil at the end and topped with corn and butter. Also added a dash of chili oil for heat.",
+      "has_modification": true
+    },
+    {
+      "username": "NoodleFan",
+      "rating": 4,
+      "text": "Used chicken broth instead of pork for a lighter version. Added extra green onions and a squeeze of lime.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie280",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook284",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic481",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed108",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

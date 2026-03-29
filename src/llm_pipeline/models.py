@@ -142,3 +142,11 @@ class Review(BaseModel):
     rating: Optional[int] = None
     username: Optional[str] = None
     has_modification: bool = False
+    quality_score: Optional[float] = Field(
+        default=None,
+        description="Calculated quality score (0.0-1.0)"
+    )
+    text_length: Optional[int] = Field(
+        default=None,
+        description="Character count of review text"
+    )

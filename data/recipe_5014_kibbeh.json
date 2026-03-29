@@ -1,0 +1,61 @@
+{
+  "recipe_id": "5014",
+  "title": "Kibbeh",
+  "cuisine": "Lebanese",
+  "ingredients": [
+    "2 lb bulgur wheat",
+    "1 lb ground beef",
+    "1 lb ground lamb",
+    "2 onions",
+    "1 tsp allspice",
+    "1 tsp cinnamon",
+    "1/2 cup pine nuts",
+    "Vegetable oil"
+  ],
+  "instructions": [
+    "Soak bulgur in water.",
+    "Mix bulgur with meat and spices.",
+    "Make filling with meat, onions, nuts.",
+    "Form into football shapes.",
+    "Fry until golden brown.",
+    "Serve with yogurt sauce."
+  ],
+  "reviews": [
+    {
+      "username": "LebaneseCook",
+      "rating": 5,
+      "text": "Perfect kibbeh! Added a splash of lemon juice and a pinch of sumac. Also added a dash of allspice and a sprinkle of fresh mint.",
+      "has_modification": true
+    },
+    {
+      "username": "MiddleEasternFan",
+      "rating": 4,
+      "text": "Baked instead of fried for a lighter version. Added extra pine nuts and a pinch of cumin. Served with tahini sauce.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie340",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook618",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic428",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed605",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

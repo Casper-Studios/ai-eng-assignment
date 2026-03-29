@@ -4,15 +4,16 @@
   "title": "Best Chocolate Chip Cookies (Community Enhanced)",
   "ingredients": [
     "1 cup butter, softened",
-    "0.5 cup white sugar",
-    "1.5 cups packed brown sugar",
+    "1/2 cup white sugar",
+    "dash of cinnamon",
+    "1 1/2 cups packed brown sugar",
     "2 eggs",
     "1 additional egg yolk",
     "2 teaspoons vanilla extract",
     "1 teaspoon baking soda",
     "2 teaspoons hot water",
     "0.5 teaspoon salt",
-    "3 cups all-purpose flour",
+    "2.5 cups all-purpose flour",
     "2 cups semisweet chocolate chips",
     "1 cup chopped walnuts"
   ],
@@ -34,8 +35,8 @@
         "reviewer": null,
         "rating": 5
       },
-      "modification_type": "addition",
-      "reasoning": "Adding an additional egg yolk helps keep the cookies chewy.",
+      "modification_type": "quantity_adjustment",
+      "reasoning": "Adding an additional egg yolk helps keep the cookie chewy",
       "changes_made": [
         {
           "type": "ingredient",
@@ -43,8 +44,7 @@
           "to_text": "1 additional egg yolk",
           "operation": "add"
         }
-      ],
-      "confidence_score": 0.85
+      ]
     },
     {
       "source_review": {
@@ -53,38 +53,70 @@
         "rating": 5
       },
       "modification_type": "quantity_adjustment",
-      "reasoning": "Increases the ratio of brown sugar for a chewier texture and more flavor.",
+      "reasoning": "Adjusting the sugar content to personal preference",
       "changes_made": [
         {
           "type": "ingredient",
           "from_text": "1 cup white sugar",
-          "to_text": "0.5 cup white sugar",
+          "to_text": "1/2 cup white sugar",
           "operation": "replace"
         },
         {
           "type": "ingredient",
           "from_text": "1 cup packed brown sugar",
-          "to_text": "1.5 cups packed brown sugar",
+          "to_text": "1 1/2 cups packed brown sugar",
           "operation": "replace"
         }
-      ],
-      "confidence_score": 0.9
+      ]
+    },
+    {
+      "source_review": {
+        "text": "I just made these and 😍😋!!!! Changes- used a whole cup of white sugar and 1/2 c of brown (because it's what I had) and 1/2 c less flour after reading some other reviews, and added a tiny dash of cinnamon. They are phenomenal! Crispy edges and gooey center. My husband works from home and he can't stop coming out of his office and trying them!!!! HUGE hit and will be my go to. Thank you!!",
+        "reviewer": null,
+        "rating": 5
+      },
+      "modification_type": "quantity_adjustment",
+      "reasoning": "Adjusting sugar and flour quantities to personal preference",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "1/2 cup white sugar",
+          "to_text": "1/2 cup white sugar",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "1 1/2 cups packed brown sugar",
+          "to_text": "1 1/2 cups packed brown sugar",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "3 cups all-purpose flour",
+          "to_text": "2.5 cups all-purpose flour",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "dash of cinnamon",
+          "operation": "add"
+        }
+      ]
     }
   ],
   "enhancement_summary": {
-    "total_changes": 3,
+    "total_changes": 7,
     "change_types": [
-      "quantity_adjustment",
-      "addition"
+      "quantity_adjustment"
     ],
-    "confidence_score": 0.88,
-    "expected_impact": "Adding an additional egg yolk helps keep the cookies chewy.; Increases the ratio of brown sugar for a chewier texture and more flavor."
+    "expected_impact": "Adding an additional egg yolk helps keep the cookie chewy; Adjusting the sugar content to personal preference; Adjusting sugar and flour quantities to personal preference"
   },
   "description": "This classic chocolate chip cookie recipe makes deliciously buttery cookies with crisp edges, chewy middles, and gooey chocolate chips in every bite.",
   "servings": "48",
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2025-09-25T01:20:16.152241",
-  "pipeline_version": "1.0.0"
+  "created_at": "2026-03-29T18:26:04.694919",
+  "pipeline_version": "1.3.0-test"
 }

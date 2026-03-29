@@ -16,6 +16,7 @@ from pydantic import ValidationError
 
 from .models import ModificationObject, Recipe, Review
 from .prompts import build_simple_prompt
+from .quality_scorer import QualityScorer
 
 
 class TweakExtractor:
@@ -69,8 +70,8 @@ class TweakExtractor:
                     model=self.model,
                     messages=[{"role": "user", "content": prompt}],
                     response_format={"type": "json_object"},
-                    temperature=0.1,  # Low temperature for consistent extractions
-                    max_tokens=1000,
+                    temperature=0.3,  # Increased for better multi-change extraction
+                    max_tokens=1500,  # Increased to capture more modifications
                 )
 
                 raw_output = response.choices[0].message.content
@@ -89,7 +90,22 @@ class TweakExtractor:
                     f"Successfully extracted {modification.modification_type} "
                     f"modification with {len(modification.edits)} edits"
                 )
-                return modification
+
+                # Supplement with pattern validation to catch missed modifications
+                from .pattern_validator import PatternValidator
+                validator = PatternValidator()
+                supplemented = validator.supplement_extraction(
+                    review.text,
+                    modification,
+                    recipe.ingredients
+                )
+
+                if supplemented.edits != modification.edits:
+                    logger.info(
+                        f"Pattern validation added {len(supplemented.edits) - len(modification.edits)} edits"
+                    )
+
+                return supplemented
 
             except json.JSONDecodeError as e:
                 logger.warning(f"Attempt {attempt + 1}: Failed to parse JSON: {e}")
@@ -115,6 +131,7 @@ class TweakExtractor:
     ) -> tuple[ModificationObject, Review] | tuple[None, None]:
         """
         Extract modification from a single randomly selected review.
+        NOTE: This method is deprecated. Use extract_all_modifications instead.
 
         Args:
             reviews: List of reviews to choose from
@@ -143,6 +160,103 @@ class TweakExtractor:
         else:
             logger.warning("Failed to extract modification from selected review")
             return None, None
+
+    def extract_all_modifications(
+        self,
+        reviews: list[Review],
+        recipe: Recipe,
+        min_rating: int = 4,
+        min_quality_score: float = 0.75
+    ) -> list[tuple[ModificationObject, Review]]:
+        """
+        Extract modifications from all reviews that meet quality criteria.
+
+        Args:
+            reviews: List of reviews to process
+            recipe: Original recipe being modified
+            min_rating: Minimum star rating (default: 4)
+            min_quality_score: Minimum quality score threshold (default: 0.75)
+
+        Returns:
+            List of tuples: (ModificationObject, source_Review) for all successful extractions
+        """
+        # Initialize quality scorer
+        scorer = QualityScorer()
+
+        # Step 1: Filter by rating and modification flag
+        rating_filtered = [
+            r for r in reviews
+            if r.has_modification and r.rating is not None and r.rating >= min_rating
+        ]
+
+        if not rating_filtered:
+            logger.warning(f"No reviews with modifications and rating >= {min_rating} found")
+            return []
+
+        logger.info(
+            f"Found {len(rating_filtered)} reviews with rating >= {min_rating} "
+            f"out of {len(reviews)} total reviews"
+        )
+
+        # Step 2: Extract modifications from all rating-qualified reviews
+        extractions_with_modifications = []
+
+        for review in rating_filtered:
+            logger.debug(f"Processing review with {review.rating}★ rating: {review.text[:80]}...")
+
+            modification = self.extract_modification(review, recipe)
+
+            if modification:
+                # Calculate quality score
+                review.text_length = len(review.text) if review.text else 0
+                quality_score = scorer.calculate_review_quality_score(review, modification)
+                review.quality_score = quality_score
+
+                extractions_with_modifications.append((modification, review, quality_score))
+
+                logger.debug(
+                    f"✓ Extracted {modification.modification_type} with quality score: {quality_score:.2f}"
+                )
+            else:
+                logger.debug(
+                    f"✗ Failed to extract modification from {review.rating}★ review"
+                )
+
+        if not extractions_with_modifications:
+            logger.warning("No modifications could be extracted from high-rated reviews")
+            return []
+
+        # Step 3: Filter by quality score
+        quality_filtered = [
+            (mod, review)
+            for mod, review, score in extractions_with_modifications
+            if score >= min_quality_score
+        ]
+
+        # Log quality distribution
+        all_scores = [score for _, _, score in extractions_with_modifications]
+        distribution = scorer.get_quality_distribution(all_scores)
+
+        logger.info(
+            f"Quality Score Distribution: "
+            f"min={distribution['min']:.2f}, max={distribution['max']:.2f}, "
+            f"avg={distribution['avg']:.2f}, median={distribution['median']:.2f}"
+        )
+
+        logger.info(
+            f"Filtered to {len(quality_filtered)} reviews with quality score >= {min_quality_score} "
+            f"out of {len(extractions_with_modifications)} extracted"
+        )
+
+        # Log successful extractions with details
+        for modification, review in quality_filtered:
+            logger.info(
+                f"✓ {review.rating}★ review (quality={review.quality_score:.2f}): "
+                f"{modification.modification_type} - {len(modification.edits)} edits - "
+                f"{review.username or 'anonymous'}"
+            )
+
+        return quality_filtered
 
     def test_extraction(
         self, review_text: str, recipe_data: dict

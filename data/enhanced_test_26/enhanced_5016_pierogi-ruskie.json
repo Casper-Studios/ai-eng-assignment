@@ -1,0 +1,124 @@
+{
+  "recipe_id": "5016_enhanced",
+  "original_recipe_id": "5016",
+  "title": "Pierogi Ruskie (Community Enhanced)",
+  "ingredients": [
+    "2 cups flour",
+    "drizzle of melted",
+    "dash of pepper",
+    "1 egg",
+    "1/2 cup sour cream",
+    "a splash of sour cream",
+    "4 potatoes",
+    "1 cup cheese",
+    "1/2 cup cheddar cheese",
+    "1 onion",
+    "Bacon (desired amount)",
+    "Butter for serving",
+    "Sour cream for serving",
+    "topped with fried onions"
+  ],
+  "instructions": [
+    "Make dough with flour, egg, sour cream.",
+    "Boil and mash potatoes.",
+    "Mix with cheese and caramelized onion.",
+    "Roll dough and fill.",
+    "Boil pierogi.",
+    "Serve with butter and sour cream.",
+    "Sprinkle a pinch of garlic powder on top.",
+    "Drizzle melted butter on top.",
+    "Also added a splash of sour cream and topped with fried onions."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Just like grandma's! Added a pinch of salt and a dash of pepper. Also added a splash of sour cream and topped with fried onions.",
+        "reviewer": "PolishChef",
+        "rating": 5
+      },
+      "modification_type": "addition",
+      "reasoning": "Enhances flavor and texture of the dish",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "a splash of sour cream",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Also added a splash of sour cream and topped with fried onions.",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "dash of pepper",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "topped with fried onions",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Added bacon and cheddar cheese. Also added a pinch of garlic powder and a drizzle of melted butter.",
+        "reviewer": "DumplingLover",
+        "rating": 4
+      },
+      "modification_type": "addition",
+      "reasoning": "The user added extra flavors and richness to the dish by including bacon, cheddar cheese, garlic powder, and melted butter.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "1/2 cup cheddar cheese",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "Bacon (desired amount)",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Drizzle melted butter on top.",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Sprinkle a pinch of garlic powder on top.",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "drizzle of melted",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 9,
+    "change_types": [
+      "addition"
+    ],
+    "expected_impact": "Enhances flavor and texture of the dish; The user added extra flavors and richness to the dish by including bacon, cheddar cheese, garlic powder, and melted butter."
+  },
+  "description": null,
+  "servings": null,
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2026-03-29T18:26:55.129634",
+  "pipeline_version": "1.3.0-test"
+}

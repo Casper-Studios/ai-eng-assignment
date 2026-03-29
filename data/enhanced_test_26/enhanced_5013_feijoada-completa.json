@@ -1,0 +1,110 @@
+{
+  "recipe_id": "5013_enhanced",
+  "original_recipe_id": "5013",
+  "title": "Feijoada Completa (Community Enhanced)",
+  "ingredients": [
+    "2 lb black beans",
+    "pinch of black pepper",
+    "dash of hot sauce",
+    "2 ham hocks",
+    "1/2 lb chorizo",
+    "1/2 lb bacon",
+    "2 bay leaves",
+    "4 oranges",
+    "White rice",
+    "Collard greens",
+    "topped with fresh cilantro"
+  ],
+  "instructions": [
+    "Simmer beans with smoked meats.",
+    "Cook until beans are tender.",
+    "Season and finish.",
+    "Serve over white rice.",
+    "Top with fresh cilantro.",
+    "Garnish with orange slices.",
+    "Add a splash of lime juice and a pinch of sea salt.",
+    "Serve with sauteed collard greens.",
+    "Also added a dash of hot sauce."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Authentic and delicious! Added a splash of lime juice and a pinch of sea salt. Also added a dash of hot sauce and topped with fresh cilantro.",
+        "reviewer": "BrazilianChef",
+        "rating": 5
+      },
+      "modification_type": "addition",
+      "reasoning": "Enhances the flavor profile and adds freshness to the dish.",
+      "changes_made": [
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Top with fresh cilantro.",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Add a splash of lime juice and a pinch of sea salt.",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Also added a dash of hot sauce.",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "dash of hot sauce",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "topped with fresh cilantro",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Used ham hocks instead of pork shoulder. Added extra bay leaves and a pinch of black pepper. Served with farofa.",
+        "reviewer": "FeijoadaFan",
+        "rating": 4
+      },
+      "modification_type": "ingredient_substitution",
+      "reasoning": "User preferred the flavor and texture of ham hocks over pork shoulder.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "1 lb pork shoulder",
+          "to_text": "2 ham hocks",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "pinch of black pepper",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 7,
+    "change_types": [
+      "addition",
+      "ingredient_substitution"
+    ],
+    "expected_impact": "Enhances the flavor profile and adds freshness to the dish.; User preferred the flavor and texture of ham hocks over pork shoulder."
+  },
+  "description": null,
+  "servings": null,
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2026-03-29T18:26:47.367928",
+  "pipeline_version": "1.3.0-test"
+}

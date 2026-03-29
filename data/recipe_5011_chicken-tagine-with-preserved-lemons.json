@@ -1,0 +1,63 @@
+{
+  "recipe_id": "5011",
+  "title": "Chicken Tagine with Preserved Lemons",
+  "cuisine": "Moroccan",
+  "ingredients": [
+    "2 lb chicken thighs",
+    "2 preserved lemons",
+    "1 cup green olives",
+    "1 onion",
+    "4 garlic cloves",
+    "1 tsp cumin",
+    "1 tsp coriander",
+    "1 tsp turmeric",
+    "1 cup chicken stock",
+    "1/4 cup cilantro"
+  ],
+  "instructions": [
+    "Brown chicken in tagine.",
+    "Cook onion and spices.",
+    "Add chicken back with stock.",
+    "Simmer 45 minutes.",
+    "Add lemons and olives.",
+    "Garnish with cilantro."
+  ],
+  "reviews": [
+    {
+      "username": "MoroccanCook",
+      "rating": 5,
+      "text": "Incredible flavors! Added a splash of chicken stock and a pinch of ras el hanout. Also added a dash of lemon juice and a sprinkle of fresh cilantro.",
+      "has_modification": true
+    },
+    {
+      "username": "TagineLover",
+      "rating": 4,
+      "text": "Used dried apricots instead of olives. Added extra cumin and a pinch of cinnamon. Served over couscous.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie104",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook647",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic390",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed368",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

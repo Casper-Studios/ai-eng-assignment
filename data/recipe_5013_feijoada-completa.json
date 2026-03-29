@@ -1,0 +1,61 @@
+{
+  "recipe_id": "5013",
+  "title": "Feijoada Completa",
+  "cuisine": "Brazilian",
+  "ingredients": [
+    "2 lb black beans",
+    "1 lb pork shoulder",
+    "1/2 lb chorizo",
+    "1/2 lb bacon",
+    "2 bay leaves",
+    "4 oranges",
+    "White rice",
+    "Collard greens"
+  ],
+  "instructions": [
+    "Simmer beans with smoked meats.",
+    "Cook until beans are tender.",
+    "Season and finish.",
+    "Serve over white rice.",
+    "Garnish with orange slices.",
+    "Serve with sauteed collard greens."
+  ],
+  "reviews": [
+    {
+      "username": "BrazilianChef",
+      "rating": 5,
+      "text": "Authentic and delicious! Added a splash of lime juice and a pinch of sea salt. Also added a dash of hot sauce and topped with fresh cilantro.",
+      "has_modification": true
+    },
+    {
+      "username": "FeijoadaFan",
+      "rating": 4,
+      "text": "Used ham hocks instead of pork shoulder. Added extra bay leaves and a pinch of black pepper. Served with farofa.",
+      "has_modification": true
+    },
+    {
+      "username": "Foodie252",
+      "rating": 5,
+      "text": "Perfect recipe! Followed it exactly and turned out great. Will make again.",
+      "has_modification": false
+    },
+    {
+      "username": "HomeCook253",
+      "rating": 4,
+      "text": "Really good recipe. My family loved it. Simple to follow.",
+      "has_modification": false
+    },
+    {
+      "username": "Critic480",
+      "rating": 3,
+      "text": "It was okay. Nothing special but edible. Might make again with changes.",
+      "has_modification": false
+    },
+    {
+      "username": "Disappointed623",
+      "rating": 2,
+      "text": "Didn't work for me. Flavor was off and texture was wrong.",
+      "has_modification": false
+    }
+  ]
+}

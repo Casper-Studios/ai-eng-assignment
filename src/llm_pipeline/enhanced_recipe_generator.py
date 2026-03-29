@@ -169,6 +169,81 @@ class EnhancedRecipeGenerator:
 
         return enhanced_recipe
 
+    def generate_enhanced_recipe_from_multiple(
+        self,
+        original_recipe: Recipe,
+        modified_recipe: Recipe,
+        all_extractions: List[tuple[ModificationObject, Review]],
+        all_change_records: List[List[ChangeRecord]],
+    ) -> EnhancedRecipe:
+        """
+        Generate a complete enhanced recipe with attribution for multiple modifications.
+
+        Args:
+            original_recipe: Original unmodified recipe
+            modified_recipe: Recipe with all modifications applied
+            all_extractions: List of (ModificationObject, Review) tuples
+            all_change_records: List of ChangeRecord lists for each modification
+
+        Returns:
+            Complete EnhancedRecipe with attribution for all modifications
+        """
+        logger.info(
+            f"Generating enhanced recipe for: {original_recipe.title} "
+            f"with {len(all_extractions)} modifications"
+        )
+
+        # Create modification applied records for all extractions
+        modifications_applied = []
+        for (modification, source_review), change_records in zip(
+            all_extractions, all_change_records
+        ):
+            modification_applied = self.create_modification_applied(
+                modification, source_review, change_records
+            )
+            modifications_applied.append(modification_applied)
+
+        # Calculate enhancement summary
+        enhancement_summary = self.calculate_enhancement_summary(modifications_applied)
+
+        # Generate enhanced recipe ID and title
+        enhanced_recipe_id = f"{original_recipe.recipe_id}_enhanced"
+        enhanced_title = f"{original_recipe.title} (Community Enhanced)"
+
+        # Create the enhanced recipe
+        enhanced_recipe = EnhancedRecipe(
+            recipe_id=enhanced_recipe_id,
+            original_recipe_id=original_recipe.recipe_id,
+            title=enhanced_title,
+            ingredients=modified_recipe.ingredients,
+            instructions=modified_recipe.instructions,
+            modifications_applied=modifications_applied,
+            enhancement_summary=enhancement_summary,
+            description=original_recipe.description,
+            servings=original_recipe.servings,
+            prep_time=getattr(original_recipe, "prep_time", None),
+            cook_time=getattr(original_recipe, "cook_time", None),
+            total_time=getattr(original_recipe, "total_time", None),
+            created_at=datetime.now().isoformat(),
+            pipeline_version=self.pipeline_version,
+        )
+
+        logger.info(
+            f"Generated enhanced recipe with {enhancement_summary.total_changes} changes "
+            f"from {len(modifications_applied)} modifications"
+        )
+
+        # Log modification breakdown
+        for i, mod_applied in enumerate(modifications_applied, 1):
+            logger.info(
+                f"  {i}. {mod_applied.modification_type} - "
+                f"{len(mod_applied.changes_made)} changes - "
+                f"by {mod_applied.source_review.reviewer or 'anonymous'} "
+                f"({mod_applied.source_review.rating}★)"
+            )
+
+        return enhanced_recipe
+
     def generate_comparison_data(
         self, original_recipe: Recipe, enhanced_recipe: EnhancedRecipe
     ) -> Dict[str, Any]:

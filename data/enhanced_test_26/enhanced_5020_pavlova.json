@@ -1,0 +1,109 @@
+{
+  "recipe_id": "5020_enhanced",
+  "original_recipe_id": "5020",
+  "title": "Pavlova (Community Enhanced)",
+  "ingredients": [
+    "4 egg whites",
+    "dash of lemon zest",
+    "1 cup sugar",
+    "1 tsp vinegar",
+    "1 tsp cornstarch",
+    "1 tsp vanilla",
+    "extra vanilla",
+    "a splash of vanilla",
+    "1 cup heavy cream",
+    "pinch of cream of tartar",
+    "Fresh fruits",
+    "topped with passion fruit"
+  ],
+  "instructions": [
+    "Beat egg whites until soft peaks.",
+    "Gradually add sugar.",
+    "Fold in vinegar, cornstarch, vanilla.",
+    "Bake at low heat for 1 hour.",
+    "Cool in oven.",
+    "Top with whipped cream and fruits.",
+    "Served with mango coulis.",
+    "Also added a dash of lemon zest and topped with passion fruit."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Perfect pavlova! Added a splash of vanilla and a pinch of salt. Also added a dash of lemon zest and topped with passion fruit.",
+        "reviewer": "AustralianChef",
+        "rating": 5
+      },
+      "modification_type": "addition",
+      "reasoning": "Enhances the flavor profile of the pavlova with additional complementary ingredients.",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "a splash of vanilla",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Also added a dash of lemon zest and topped with passion fruit.",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "dash of lemon zest",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "topped with passion fruit",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Used berries and kiwi for topping. Added extra vanilla and a pinch of cream of tartar. Served with mango coulis.",
+        "reviewer": "DessertLover",
+        "rating": 4
+      },
+      "modification_type": "addition",
+      "reasoning": "Enhances the flavor profile and presentation of the dish",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "pinch of cream of tartar",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "extra vanilla",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Served with mango coulis.",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 7,
+    "change_types": [
+      "addition"
+    ],
+    "expected_impact": "Enhances the flavor profile of the pavlova with additional complementary ingredients.; Enhances the flavor profile and presentation of the dish"
+  },
+  "description": null,
+  "servings": null,
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2026-03-29T18:27:05.388832",
+  "pipeline_version": "1.3.0-test"
+}

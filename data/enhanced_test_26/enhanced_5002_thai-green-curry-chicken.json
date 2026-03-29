@@ -1,0 +1,95 @@
+{
+  "recipe_id": "5002_enhanced",
+  "original_recipe_id": "5002",
+  "title": "Thai Green Curry Chicken (Community Enhanced)",
+  "ingredients": [
+    "1 lb chicken breast, sliced",
+    "2 tbsp green curry paste",
+    "2% milk",
+    "1 cup bamboo shoots",
+    "1 cup Thai basil leaves",
+    "baby corn and bell peppers",
+    "2 tbsp fish sauce",
+    "dash of fish sauce",
+    "1 tbsp palm sugar",
+    "2 kaffir lime leaves",
+    "topped with crushed peanuts"
+  ],
+  "instructions": [
+    "Heat curry paste in a wok until fragrant.",
+    "Add chicken and cook through.",
+    "Pour in coconut milk and simmer.",
+    "Add bamboo shoots and seasonings.",
+    "Stir in Thai basil just before serving.",
+    "Squeeze of lime juice at the end for extra brightness."
+  ],
+  "modifications_applied": [
+    {
+      "source_review": {
+        "text": "Amazing curry! I added a dash of fish sauce and squeeze of lime juice at the end for extra brightness. Also threw in some baby corn and bell peppers.",
+        "reviewer": "SpicyFoodie",
+        "rating": 5
+      },
+      "modification_type": "addition",
+      "reasoning": "To add extra brightness and flavor to the curry",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "dash of fish sauce",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Squeeze of lime juice at the end for extra brightness.",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "baby corn and bell peppers",
+          "operation": "add"
+        }
+      ]
+    },
+    {
+      "source_review": {
+        "text": "Used 2% milk instead of coconut milk for a lighter version. Added extra curry paste and topped with crushed peanuts.",
+        "reviewer": "CurryLover",
+        "rating": 4
+      },
+      "modification_type": "ingredient_substitution",
+      "reasoning": "User opted for a lighter alternative to coconut milk",
+      "changes_made": [
+        {
+          "type": "ingredient",
+          "from_text": "400ml coconut milk",
+          "to_text": "2% milk",
+          "operation": "replace"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "topped with crushed peanuts",
+          "operation": "add"
+        }
+      ]
+    }
+  ],
+  "enhancement_summary": {
+    "total_changes": 5,
+    "change_types": [
+      "addition",
+      "ingredient_substitution"
+    ],
+    "expected_impact": "To add extra brightness and flavor to the curry; User opted for a lighter alternative to coconut milk"
+  },
+  "description": null,
+  "servings": null,
+  "prep_time": null,
+  "cook_time": null,
+  "total_time": null,
+  "created_at": "2026-03-29T18:26:13.818224",
+  "pipeline_version": "1.3.0-test"
+}
