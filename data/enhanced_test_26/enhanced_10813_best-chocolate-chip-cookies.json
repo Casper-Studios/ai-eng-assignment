@@ -35,8 +35,8 @@
         "reviewer": null,
         "rating": 5
       },
-      "modification_type": "addition",
-      "reasoning": "Adding an additional egg yolk can help keep the cookie chewy and add richness.",
+      "modification_type": "quantity_adjustment",
+      "reasoning": "Adding an additional egg yolk helps keep the cookie chewy",
       "changes_made": [
         {
           "type": "ingredient",
@@ -53,7 +53,7 @@
         "rating": 5
       },
       "modification_type": "quantity_adjustment",
-      "reasoning": "To adjust the sweetness and texture of the cookies",
+      "reasoning": "Adjusting the sugar content to personal preference",
       "changes_made": [
         {
           "type": "ingredient",
@@ -108,16 +108,15 @@
   "enhancement_summary": {
     "total_changes": 7,
     "change_types": [
-      "quantity_adjustment",
-      "addition"
+      "quantity_adjustment"
     ],
-    "expected_impact": "Adding an additional egg yolk can help keep the cookie chewy and add richness.; To adjust the sweetness and texture of the cookies; Adjusting sugar and flour quantities to personal preference"
+    "expected_impact": "Adding an additional egg yolk helps keep the cookie chewy; Adjusting the sugar content to personal preference; Adjusting sugar and flour quantities to personal preference"
   },
   "description": "This classic chocolate chip cookie recipe makes deliciously buttery cookies with crisp edges, chewy middles, and gooey chocolate chips in every bite.",
   "servings": "48",
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2026-03-28T17:52:13.976190",
+  "created_at": "2026-03-29T18:26:04.694919",
   "pipeline_version": "1.3.0-test"
 }

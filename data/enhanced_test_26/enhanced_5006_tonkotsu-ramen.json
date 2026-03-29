@@ -8,7 +8,6 @@
     "1 lb pork belly",
     "4 packages ramen noodles",
     "6 soft-boiled eggs",
-    ", corn, butter",
     "4 green onions, sliced",
     "2 cups nori sheets",
     "1 cup soy sauce",
@@ -21,7 +20,9 @@
     "Cook ramen noodles.",
     "Assemble bowls with broth, noodles, toppings.",
     "Add soft-boiled egg, nori, green onions.",
-    " Also added a splash of sesame oil at the end and a dash of chili oil for heat."
+    "Drizzle with chili oil for heat.",
+    "Finish with a splash of sesame oil.",
+    "Top with corn and butter."
   ],
   "modifications_applied": [
     {
@@ -31,18 +32,24 @@
         "rating": 5
       },
       "modification_type": "addition",
-      "reasoning": "The user added additional toppings to enhance flavor and texture.",
+      "reasoning": "To add additional flavors and textures to the dish",
       "changes_made": [
         {
-          "type": "ingredient",
+          "type": "instruction",
           "from_text": "",
-          "to_text": ", corn, butter",
+          "to_text": "Top with corn and butter.",
           "operation": "add"
         },
         {
           "type": "instruction",
           "from_text": "",
-          "to_text": " Also added a splash of sesame oil at the end and a dash of chili oil for heat.",
+          "to_text": "Finish with a splash of sesame oil.",
+          "operation": "add"
+        },
+        {
+          "type": "instruction",
+          "from_text": "",
+          "to_text": "Drizzle with chili oil for heat.",
           "operation": "add"
         },
         {
@@ -66,7 +73,7 @@
         "rating": 4
       },
       "modification_type": "ingredient_substitution",
-      "reasoning": "User opted for a lighter broth by using chicken instead of pork.",
+      "reasoning": "User wanted a lighter version of the dish by using chicken broth instead of pork broth.",
       "changes_made": [
         {
           "type": "ingredient",
@@ -78,18 +85,18 @@
     }
   ],
   "enhancement_summary": {
-    "total_changes": 5,
+    "total_changes": 6,
     "change_types": [
-      "ingredient_substitution",
-      "addition"
+      "addition",
+      "ingredient_substitution"
     ],
-    "expected_impact": "The user added additional toppings to enhance flavor and texture.; User opted for a lighter broth by using chicken instead of pork."
+    "expected_impact": "To add additional flavors and textures to the dish; User wanted a lighter version of the dish by using chicken broth instead of pork broth."
   },
   "description": null,
   "servings": null,
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2026-03-28T17:52:32.595350",
+  "created_at": "2026-03-29T18:26:27.729331",
   "pipeline_version": "1.3.0-test"
 }

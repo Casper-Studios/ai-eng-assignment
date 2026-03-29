@@ -8,10 +8,8 @@
     "1 lb beef brisket",
     "pinch of star anise",
     "1 star anise",
-    "splash of fish sauce",
     "1 cinnamon stick",
     "4 cloves",
-    "pinch of sugar",
     "1 onion, charred",
     "1 lb rice noodles",
     "Bean sprouts, basil, lime for serving",
@@ -24,7 +22,7 @@
     "Cook noodles.",
     "Assemble bowls with broth, noodles, meat.",
     "Serve with herbs and condiments.",
-    "Add a dash of hoisin sauce and squeeze of lime before eating."
+    "Add a splash of fish sauce and a pinch of sugar. Add a dash of hoisin sauce and squeeze of lime before eating."
   ],
   "modifications_applied": [
     {
@@ -37,21 +35,9 @@
       "reasoning": "Enhances the flavor profile of the dish with additional umami and acidity.",
       "changes_made": [
         {
-          "type": "ingredient",
-          "from_text": "",
-          "to_text": "splash of fish sauce",
-          "operation": "add"
-        },
-        {
-          "type": "ingredient",
-          "from_text": "",
-          "to_text": "pinch of sugar",
-          "operation": "add"
-        },
-        {
           "type": "instruction",
           "from_text": "",
-          "to_text": "Add a dash of hoisin sauce and squeeze of lime before eating.",
+          "to_text": "Add a splash of fish sauce and a pinch of sugar. Add a dash of hoisin sauce and squeeze of lime before eating.",
           "operation": "add"
         },
         {
@@ -69,7 +55,7 @@
         "rating": 4
       },
       "modification_type": "ingredient_substitution",
-      "reasoning": "User preferred the flavor of chicken broth over beef broth.",
+      "reasoning": "User preferred chicken broth over beef broth for a different flavor profile.",
       "changes_made": [
         {
           "type": "ingredient",
@@ -93,18 +79,18 @@
     }
   ],
   "enhancement_summary": {
-    "total_changes": 7,
+    "total_changes": 5,
     "change_types": [
-      "ingredient_substitution",
-      "addition"
+      "addition",
+      "ingredient_substitution"
     ],
-    "expected_impact": "Enhances the flavor profile of the dish with additional umami and acidity.; User preferred the flavor of chicken broth over beef broth."
+    "expected_impact": "Enhances the flavor profile of the dish with additional umami and acidity.; User preferred chicken broth over beef broth for a different flavor profile."
   },
   "description": null,
   "servings": null,
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2026-03-28T17:52:41.358577",
+  "created_at": "2026-03-29T18:26:36.868889",
   "pipeline_version": "1.3.0-test"
 }

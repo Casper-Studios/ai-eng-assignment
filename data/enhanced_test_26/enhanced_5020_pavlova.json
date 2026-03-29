@@ -13,8 +13,8 @@
     "a splash of vanilla",
     "1 cup heavy cream",
     "pinch of cream of tartar",
-    "berries, kiwi",
-    "a dash of lemon zest and passion fruit"
+    "Fresh fruits",
+    "topped with passion fruit"
   ],
   "instructions": [
     "Beat egg whites until soft peaks.",
@@ -23,7 +23,8 @@
     "Bake at low heat for 1 hour.",
     "Cool in oven.",
     "Top with whipped cream and fruits.",
-    "Served with mango coulis."
+    "Served with mango coulis.",
+    "Also added a dash of lemon zest and topped with passion fruit."
   ],
   "modifications_applied": [
     {
@@ -42,15 +43,21 @@
           "operation": "add"
         },
         {
-          "type": "ingredient",
+          "type": "instruction",
           "from_text": "",
-          "to_text": "a dash of lemon zest and passion fruit",
+          "to_text": "Also added a dash of lemon zest and topped with passion fruit.",
           "operation": "add"
         },
         {
           "type": "ingredient",
           "from_text": "",
           "to_text": "dash of lemon zest",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "topped with passion fruit",
           "operation": "add"
         }
       ]
@@ -66,20 +73,14 @@
       "changes_made": [
         {
           "type": "ingredient",
-          "from_text": "Fresh fruits",
-          "to_text": "berries, kiwi",
-          "operation": "replace"
-        },
-        {
-          "type": "ingredient",
           "from_text": "",
-          "to_text": "extra vanilla",
+          "to_text": "pinch of cream of tartar",
           "operation": "add"
         },
         {
           "type": "ingredient",
           "from_text": "",
-          "to_text": "pinch of cream of tartar",
+          "to_text": "extra vanilla",
           "operation": "add"
         },
         {
@@ -103,6 +104,6 @@
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2026-03-28T17:53:15.008286",
+  "created_at": "2026-03-29T18:27:05.388832",
   "pipeline_version": "1.3.0-test"
 }

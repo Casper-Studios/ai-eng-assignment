@@ -37,7 +37,7 @@
         "rating": 5
       },
       "modification_type": "addition",
-      "reasoning": "User wanted to increase the amount of apples in the cake for more flavor and texture.",
+      "reasoning": "Adding more apples can enhance the flavor and texture of the cake.",
       "changes_made": [
         {
           "type": "ingredient",
@@ -70,13 +70,13 @@
     "change_types": [
       "addition"
     ],
-    "expected_impact": "User wanted to increase the amount of apples in the cake for more flavor and texture.; User prefers more apple chunks in the cake for added texture and flavor"
+    "expected_impact": "Adding more apples can enhance the flavor and texture of the cake.; User prefers more apple chunks in the cake for added texture and flavor"
   },
   "description": "This delicious spicy apple cake recipe is made with fresh apples, spices, and sugar. It&#39;s a wonderfully perfect treat for the apple harvest season.",
   "servings": "9",
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2026-03-28T17:52:17.768423",
+  "created_at": "2026-03-29T18:26:08.688559",
   "pipeline_version": "1.3.0-test"
 }

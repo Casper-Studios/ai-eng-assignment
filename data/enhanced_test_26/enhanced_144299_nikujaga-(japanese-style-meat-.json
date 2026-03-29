@@ -26,7 +26,7 @@
         "rating": 4
       },
       "modification_type": "quantity_adjustment",
-      "reasoning": "User found the original meat quantity insufficient and increased it for better balance with the broth.",
+      "reasoning": "User felt the original amount of meat was insufficient and increased it for better balance with the broth.",
       "changes_made": [
         {
           "type": "ingredient",
@@ -42,13 +42,13 @@
     "change_types": [
       "quantity_adjustment"
     ],
-    "expected_impact": "User found the original meat quantity insufficient and increased it for better balance with the broth."
+    "expected_impact": "User felt the original amount of meat was insufficient and increased it for better balance with the broth."
   },
   "description": "This main dish recipe features sliced beef sirloin cooked with potatoes, and onion in a sauce made with prepared dashi soup, sake, and soy sauce.",
   "servings": "4",
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2026-03-28T17:52:15.262736",
+  "created_at": "2026-03-29T18:26:05.686880",
   "pipeline_version": "1.3.0-test"
 }

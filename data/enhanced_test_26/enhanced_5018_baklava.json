@@ -6,14 +6,14 @@
     "1 package phyllo dough",
     "dash of rose water",
     "2 cups walnuts",
-    "topped with extra pistachios",
     "1 cup sugar",
     "pinch of clove",
     "1 tsp cinnamon",
     "1 cup butter",
     "1 cup water",
     "1 cup sugar",
-    "1 lemon juice"
+    "1 lemon juice",
+    "topped with extra pistachios"
   ],
   "instructions": [
     "Mix nuts with sugar and cinnamon.",
@@ -22,8 +22,8 @@
     "Repeat layers.",
     "Cut before baking.",
     "Make syrup and pour hot over cold baklava.",
-    "Also added a dash of rose water.",
-    "Add a splash of lemon juice and a pinch of cardamom to the syrup."
+    "Top with extra pistachios.",
+    "Add a splash of lemon juice and a pinch of cardamom to the syrup. Also add a dash of rose water."
   ],
   "modifications_applied": [
     {
@@ -33,30 +33,30 @@
         "rating": 5
       },
       "modification_type": "addition",
-      "reasoning": "Enhances the flavor profile of the baklava with additional aromatic ingredients.",
+      "reasoning": "Enhances the flavor profile of the baklava with additional ingredients",
       "changes_made": [
         {
           "type": "instruction",
           "from_text": "",
-          "to_text": "Add a splash of lemon juice and a pinch of cardamom to the syrup.",
+          "to_text": "Add a splash of lemon juice and a pinch of cardamom to the syrup. Also add a dash of rose water.",
           "operation": "add"
         },
         {
           "type": "instruction",
           "from_text": "",
-          "to_text": "Also added a dash of rose water.",
-          "operation": "add"
-        },
-        {
-          "type": "ingredient",
-          "from_text": "",
-          "to_text": "topped with extra pistachios",
+          "to_text": "Top with extra pistachios.",
           "operation": "add"
         },
         {
           "type": "ingredient",
           "from_text": "",
           "to_text": "dash of rose water",
+          "operation": "add"
+        },
+        {
+          "type": "ingredient",
+          "from_text": "",
+          "to_text": "topped with extra pistachios",
           "operation": "add"
         }
       ]
@@ -88,16 +88,16 @@
   "enhancement_summary": {
     "total_changes": 6,
     "change_types": [
-      "ingredient_substitution",
-      "addition"
+      "addition",
+      "ingredient_substitution"
     ],
-    "expected_impact": "Enhances the flavor profile of the baklava with additional aromatic ingredients.; User preferred walnuts over pistachios for a different flavor profile."
+    "expected_impact": "Enhances the flavor profile of the baklava with additional ingredients; User preferred walnuts over pistachios for a different flavor profile."
   },
   "description": null,
   "servings": null,
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2026-03-28T17:53:08.698023",
+  "created_at": "2026-03-29T18:27:00.194328",
   "pipeline_version": "1.3.0-test"
 }

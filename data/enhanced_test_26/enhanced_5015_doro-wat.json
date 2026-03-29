@@ -13,8 +13,7 @@
     "4 garlic cloves",
     "1 inch ginger",
     "4 hard-boiled eggs",
-    "Injera flatbread",
-    "topped with fresh cilantro"
+    "Injera flatbread"
   ],
   "instructions": [
     "Cook onions slowly until browned.",
@@ -23,7 +22,7 @@
     "Add garlic and ginger.",
     "Simmer until chicken is done.",
     "Add eggs and serve with injera.",
-    "Also added a splash of lemon juice and a pinch of cardamom."
+    "topped with fresh cilantro"
   ],
   "modifications_applied": [
     {
@@ -33,7 +32,7 @@
         "rating": 5
       },
       "modification_type": "addition",
-      "reasoning": "The user added additional flavors to enhance the dish.",
+      "reasoning": "The user added extra flavors and garnishes to enhance the dish.",
       "changes_made": [
         {
           "type": "ingredient",
@@ -42,15 +41,9 @@
           "operation": "add"
         },
         {
-          "type": "ingredient",
-          "from_text": "",
-          "to_text": "topped with fresh cilantro",
-          "operation": "add"
-        },
-        {
           "type": "instruction",
           "from_text": "",
-          "to_text": "Also added a splash of lemon juice and a pinch of cardamom.",
+          "to_text": "topped with fresh cilantro",
           "operation": "add"
         },
         {
@@ -86,18 +79,18 @@
     }
   ],
   "enhancement_summary": {
-    "total_changes": 6,
+    "total_changes": 5,
     "change_types": [
       "quantity_adjustment",
       "addition"
     ],
-    "expected_impact": "The user added additional flavors to enhance the dish.; User wanted more heat in the dish"
+    "expected_impact": "The user added extra flavors and garnishes to enhance the dish.; User wanted more heat in the dish"
   },
   "description": null,
   "servings": null,
   "prep_time": null,
   "cook_time": null,
   "total_time": null,
-  "created_at": "2026-03-28T17:52:58.252522",
+  "created_at": "2026-03-29T18:26:51.957471",
   "pipeline_version": "1.3.0-test"
 }
