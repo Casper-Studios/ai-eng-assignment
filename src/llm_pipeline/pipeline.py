@@ -114,7 +114,7 @@ class LLMAnalysisPipeline:
         return reviews
 
     def process_single_recipe(
-        self, recipe_file: str, save_output: bool = True
+        self, recipe_file: str, save_output: bool = True, modification_limit: int = 3
     ) -> Optional[EnhancedRecipe]:
         """
         Process a single recipe through the complete pipeline.
@@ -122,6 +122,7 @@ class LLMAnalysisPipeline:
         Args:
             recipe_file: Path to recipe JSON file
             save_output: Whether to save the enhanced recipe
+            modification_limit: Maximum number of modification reviews to process
 
         Returns:
             EnhancedRecipe if successful, None otherwise
@@ -143,35 +144,50 @@ class LLMAnalysisPipeline:
                 logger.warning("No reviews with modifications found")
                 return None
 
-            # Step 1: Extract modification from one random review
-            logger.info("Step 1: Extracting modification from a single review...")
-            modification, source_review = (
-                self.tweak_extractor.extract_single_modification(reviews, recipe)
+            # Step 1: Extract modifications from first N reviews with modifications
+            logger.info(
+                "Step 1: Extracting modifications from up to "
+                f"{modification_limit} review(s)..."
+            )
+            modifications_with_reviews = (
+                self.tweak_extractor.extract_multiple_modifications(
+                    reviews, recipe, limit=modification_limit
+                )
             )
 
-            if not modification or not source_review:
-                logger.warning("No modification could be extracted")
+            if not modifications_with_reviews:
+                logger.warning("No modifications could be extracted")
                 return None
 
             logger.info(
-                f"Successfully extracted {modification.modification_type} modification"
+                "Successfully extracted "
+                f"{len(modifications_with_reviews)} modification(s)"
             )
 
-            # Step 2: Apply modification to recipe
-            logger.info("Step 2: Applying modification to recipe...")
-            modified_recipe, change_records = self.recipe_modifier.apply_modification(
-                recipe, modification
+            # Step 2: Apply all extracted modifications sequentially
+            logger.info("Step 2: Applying extracted modifications to recipe...")
+            modifications = [modification for modification, _ in modifications_with_reviews]
+            modified_recipe, change_records_batch = (
+                self.recipe_modifier.apply_modifications_batch(recipe, modifications)
+            )
+
+            total_changes = sum(
+                len(change_records) for change_records in change_records_batch
             )
 
             logger.info(
-                f"Applied modification: {len(change_records)} total changes made"
+                f"Applied {len(modifications)} modification(s): "
+                f"{total_changes} total changes made"
             )
 
             # Step 3: Generate enhanced recipe with attribution
             logger.info("Step 3: Generating enhanced recipe with attribution...")
 
-            enhanced_recipe = self.enhanced_generator.generate_enhanced_recipe(
-                recipe, modified_recipe, modification, source_review, change_records
+            enhanced_recipe = self.enhanced_generator.generate_enhanced_recipe_batch(
+                recipe,
+                modified_recipe,
+                modifications_with_reviews,
+                change_records_batch,
             )
 
             logger.info(f"Generated enhanced recipe: {enhanced_recipe.title}")

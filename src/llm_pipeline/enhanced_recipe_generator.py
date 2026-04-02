@@ -7,7 +7,7 @@ comprehensive enhanced recipe objects.
 """
 
 from datetime import datetime
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Tuple
 
 from loguru import logger
 
@@ -129,13 +129,48 @@ class EnhancedRecipeGenerator:
         Returns:
             Complete EnhancedRecipe with attribution
         """
+        return self.generate_enhanced_recipe_batch(
+            original_recipe=original_recipe,
+            modified_recipe=modified_recipe,
+            modifications_with_reviews=[(modification, source_review)],
+            change_records_batch=[change_records],
+        )
+
+    def generate_enhanced_recipe_batch(
+        self,
+        original_recipe: Recipe,
+        modified_recipe: Recipe,
+        modifications_with_reviews: List[Tuple[ModificationObject, Review]],
+        change_records_batch: List[List[ChangeRecord]],
+    ) -> EnhancedRecipe:
+        """
+        Generate an enhanced recipe from multiple applied modifications.
+
+        Args:
+            original_recipe: Original unmodified recipe
+            modified_recipe: Recipe with all modifications applied
+            modifications_with_reviews: Ordered list of (modification, source_review)
+            change_records_batch: Ordered list of change records per modification
+
+        Returns:
+            Complete EnhancedRecipe with attribution
+        """
         logger.info(f"Generating enhanced recipe for: {original_recipe.title}")
 
-        # Create modification applied record
-        modification_applied = self.create_modification_applied(
-            modification, source_review, change_records
-        )
-        modifications_applied = [modification_applied]
+        if len(modifications_with_reviews) != len(change_records_batch):
+            raise ValueError(
+                "modifications_with_reviews and change_records_batch must have the same length"
+            )
+
+        modifications_applied = []
+        for (modification, source_review), change_records in zip(
+            modifications_with_reviews, change_records_batch
+        ):
+            modifications_applied.append(
+                self.create_modification_applied(
+                    modification, source_review, change_records
+                )
+            )
 
         # Calculate enhancement summary
         enhancement_summary = self.calculate_enhancement_summary(modifications_applied)

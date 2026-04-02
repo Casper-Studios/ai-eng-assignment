@@ -207,6 +207,13 @@ User Review: "{review_text}"
 
 Extract the recipe modifications from this review. The user has made changes to improve the recipe.
 
+Important extraction rules:
+1. A single review may contain multiple independent modifications.
+2. Extract ALL explicit edits from the review as separate entries in the edits list.
+3. For each edit, prefer exact ingredient or instruction lines from the original recipe for the find field.
+4. Do not invent or infer modifications that are not explicitly stated in the review.
+5. Keep the response in the same JSON structure with modification_type, reasoning, and edits.
+
 Output a JSON object with this structure:
 {{
     "modification_type": "quantity_adjustment|ingredient_substitution|technique_change|addition|removal",

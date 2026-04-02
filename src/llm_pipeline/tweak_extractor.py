@@ -110,39 +110,64 @@ class TweakExtractor:
 
         return None
 
-    def extract_single_modification(
-        self, reviews: list[Review], recipe: Recipe
-    ) -> tuple[ModificationObject, Review] | tuple[None, None]:
+    def extract_multiple_modifications(
+        self, reviews: list[Review], recipe: Recipe, limit: int = 3
+    ) -> list[tuple[ModificationObject, Review]]:
         """
-        Extract modification from a single randomly selected review.
+        Extract modifications from the first N reviews with modification flags.
 
         Args:
-            reviews: List of reviews to choose from
+            reviews: List of reviews to process
             recipe: Original recipe being modified
+            limit: Maximum number of modification reviews to process
 
         Returns:
-            Tuple of (ModificationObject, source_Review) if successful, (None, None) otherwise
+            List of tuples: (ModificationObject, source_review)
         """
-        import random
+        if limit <= 0:
+            logger.warning(f"Invalid limit={limit}; returning no modifications")
+            return []
 
-        # Filter to reviews with modifications
-        modification_reviews = [r for r in reviews if r.has_modification]
+        modification_reviews = [r for r in reviews if r.has_modification][:limit]
 
         if not modification_reviews:
             logger.warning("No reviews with modifications found")
-            return None, None
+            return []
 
-        # Select one random review
-        selected_review = random.choice(modification_reviews)
-        logger.info(f"Selected review: {selected_review.text[:100]}...")
+        logger.info(
+            f"Processing {len(modification_reviews)} review(s) for modification extraction"
+        )
 
-        modification = self.extract_modification(selected_review, recipe)
-        if modification:
-            logger.info("Successfully extracted modification from selected review")
-            return modification, selected_review
-        else:
-            logger.warning("Failed to extract modification from selected review")
+        modifications_with_reviews: list[tuple[ModificationObject, Review]] = []
+        for index, selected_review in enumerate(modification_reviews, start=1):
+            logger.info(
+                f"Processing review {index}/{len(modification_reviews)}: "
+                f"{selected_review.text[:100]}..."
+            )
+
+            modification = self.extract_modification(selected_review, recipe)
+            if modification:
+                logger.info("Successfully extracted modification from review")
+                modifications_with_reviews.append((modification, selected_review))
+            else:
+                logger.warning("Failed to extract modification from review")
+
+        logger.info(
+            f"Extracted {len(modifications_with_reviews)} valid modification(s) "
+            f"from {len(modification_reviews)} processed review(s)"
+        )
+        return modifications_with_reviews
+
+    def extract_single_modification(
+        self, reviews: list[Review], recipe: Recipe
+    ) -> tuple[ModificationObject, Review] | tuple[None, None]:
+        """Backward-compatible wrapper around multi-review extraction."""
+        modifications_with_reviews = self.extract_multiple_modifications(
+            reviews, recipe, limit=1
+        )
+        if not modifications_with_reviews:
             return None, None
+        return modifications_with_reviews[0]
 
     def test_extraction(
         self, review_text: str, recipe_data: dict

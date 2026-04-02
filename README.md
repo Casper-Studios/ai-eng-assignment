@@ -1,106 +1,104 @@
-# Recipe Enhancement Platform
+# LLM Recipe Enhancement Pipeline
 
-Automatically enhances recipes by analyzing and applying community-tested modifications from AllRecipes.com. Uses LLM processing to extract meaningful recipe tweaks and apply them with full citation tracking.
+## Project Overview
+This project implements a Python-based LLM pipeline that enhances recipe data by learning from user reviews. The system identifies actionable review feedback, converts it into structured edits, applies those edits to recipe content, and generates enhanced recipe JSON outputs with attribution.
 
-## Installation
+Core flow:
+1. Parse recipe and review data from JSON.
+2. Extract structured modifications from reviews flagged as containing recipe changes.
+3. Apply edits sequentially to ingredients and instructions.
+4. Produce enhanced recipes with change provenance and summary metadata.
+5. Evaluate pipeline behavior using simple extraction/application metrics.
 
-This project uses [`uv`](https://docs.astral.sh/uv/) for fast, reliable Python package management.
+The target outcome is explainable recipe enhancement, where each applied change can be traced back to its source review.
 
-### Prerequisites
+## Repo Structure
+- src/
+  - llm_pipeline/
+    - pipeline.py: Orchestrates extraction, modification, and generation.
+    - tweak_extractor.py: Uses GPT-3.5-turbo to extract structured edits from reviews.
+    - recipe_modifier.py: Applies replace, remove, add_after, and add_before operations.
+    - enhanced_recipe_generator.py: Creates enhanced recipe payloads with attribution.
+    - prompts.py: Prompt templates and extraction guidance.
+    - models.py: Pydantic models for recipes, reviews, edits, and outputs.
+    - __init__.py
+  - evaluate_pipeline.py: End-to-end evaluation script and metrics reporting.
+  - scraper_v2.py: Data acquisition utility.
+  - test_pipeline.py: Pipeline execution helper.
+- data/
+  - recipe_*.json: Source recipe documents with review data.
+  - enhanced/: Generated enhanced recipes and evaluation artifacts.
+- Agent_History.md: Iterative build/debug history with coding agent.
+- README.md: Project summary and execution guide.
+- REPORT.md: Detailed analysis and engineering rationale.
 
-- Python 3.13+
-- `uv` package manager
+## Setup & Installation
+Prerequisites:
+- Python 3.11+ (project uses uv and pyproject configuration).
+- uv package manager.
+- OpenAI API key with access to GPT-3.5-turbo.
 
-## Setup
+Install and configure:
 
 ```bash
-# Install dependencies
 uv venv
 source .venv/bin/activate
 uv pip sync pyproject.toml
 ```
 
-### Environment Variables
-
-Create a `.env` file in the project root:
-
-```env
-OPENAI_API_KEY=your-openai-api-key-here
-```
-
-## Usage
-
-### 1. Scrape Recipes (Optional - data already provided)
+Set environment variable:
 
 ```bash
-uv run python src/scraper_v2.py
+export OPENAI_API_KEY="your_api_key"
 ```
 
-### 2. Run Recipe Enhancement Pipeline
+Optional: place OPENAI_API_KEY in a local .env file if your workflow loads it automatically.
+
+## Usage
+Run evaluation pipeline (recommended for reviewer walkthrough):
 
 ```bash
 cd src
+uv run python evaluate_pipeline.py
+```
 
-# Test single recipe (chocolate chip cookies)
+Alternative run options:
+
+```bash
+cd src
 uv run python test_pipeline.py single
-
-# Process all recipes
 uv run python test_pipeline.py all
 ```
 
-## Output
+What evaluate_pipeline.py does:
+1. Loads multiple recipe JSON files.
+2. Prints original ingredients and instructions preview.
+3. Extracts multiple modifications from reviews with has_modification=true.
+4. Applies modifications sequentially.
+5. Prints extracted edits, applied changes, and enhanced summary.
+6. Saves enhanced outputs for verification.
 
-### Enhanced Recipes
+## Outputs
+Primary outputs are written to data/enhanced/.
 
-Enhanced recipes are saved in `src/data/enhanced/`:
+Artifacts include:
+- enhanced_<recipe_id>_<recipe_title>.json: Enhanced recipe documents.
+- pipeline_summary_report.json: Aggregated run-level metrics and summary.
 
-- `enhanced_[recipe_id]_[recipe-name].json` - Individual enhanced recipes with modifications applied
-- `pipeline_summary_report.json` - Summary of all processing results
+Each enhanced recipe captures:
+- Updated ingredients/instructions.
+- Modifications applied with operation-level change records.
+- Source review attribution for traceability.
+- Enhancement summary metadata.
 
-### Data Structure
+Simple evaluation metrics reported by the script:
+- Number of modifications extracted.
+- Total edits applied.
+- Recipe-level success counts.
 
-Original scraped recipes in `data/` directory contain reviews with `has_modification: true` flags. Enhanced recipes include:
-
-```json
-{
-  "recipe_id": "10813_enhanced",
-  "title": "Best Chocolate Chip Cookies (Community Enhanced)",
-  "ingredients": ["1 cup butter", "1 additional egg yolk", ...],
-  "modifications_applied": [
-    {
-      "source_review": {
-        "text": "I added an extra egg yolk for chewier texture",
-        "rating": 5
-      },
-      "modification_type": "addition",
-      "reasoning": "Improves texture and chewiness",
-      "changes_made": [...]
-    }
-  ],
-  "enhancement_summary": {
-    "total_changes": 1,
-    "change_types": ["addition"],
-    "expected_impact": "Chewier texture and improved consistency"
-  }
-}
-```
-
-## How It Works
-
-The LLM Analysis Pipeline processes recipes in 3 steps:
-
-1. **Tweak Extraction**: Selects one random review with modifications and uses GPT-4o-mini to extract structured changes
-2. **Recipe Modification**: Applies changes to the original recipe using fuzzy string matching
-3. **Enhanced Recipe Generation**: Creates enhanced version with full citation tracking back to source review
-
-Each run produces one enhanced recipe per original recipe, with complete attribution showing exactly what changed and why.
-
-## Development
-
-```bash
-# Add dependencies
-uv add <package_name>
-
-# Run tests
-cd src && uv run python test_pipeline.py single
-```
+## Notes
+- The extractor is constrained to explicit review content and aims to avoid invented edits.
+- Matching is resilient via similarity logic, with fallback behavior when exact find text is not present.
+- Modifications are applied in sequence, so ordering can affect final output.
+- Output quality depends on review clarity and consistency of source recipe text.
+- The project is designed for reviewer readability: deterministic data models, structured logs, and reproducible JSON artifacts.

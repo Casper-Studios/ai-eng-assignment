@@ -88,17 +88,26 @@ class RecipeModifier:
 
             if match and index is not None:
                 original_text = modified_content[index]
-                new_text = original_text.replace(edit.find, edit.replace or "")
-                modified_content[index] = new_text
+                if edit.find in original_text:
+                    new_text = original_text.replace(edit.find, edit.replace or "")
+                else:
+                    # Fall back to full-line replacement for fuzzy matches.
+                    new_text = edit.replace or original_text
 
-                change_records.append(ChangeRecord(
-                    type="ingredient" if edit.target == "ingredients" else "instruction",
-                    from_text=original_text,
-                    to_text=new_text,
-                    operation="replace"
-                ))
-
-                logger.info(f"Replaced '{edit.find}' with '{edit.replace}' (similarity: {score:.2f})")
+                if new_text != original_text:
+                    modified_content[index] = new_text
+                    change_records.append(ChangeRecord(
+                        type="ingredient" if edit.target == "ingredients" else "instruction",
+                        from_text=original_text,
+                        to_text=new_text,
+                        operation="replace"
+                    ))
+                    logger.info(f"Replaced '{edit.find}' with '{edit.replace}' (similarity: {score:.2f})")
+                else:
+                    logger.warning(
+                        f"Matched '{edit.find}' but no text changed in {edit.target} "
+                        f"(similarity: {score:.2f})"
+                    )
             else:
                 logger.warning(f"Could not find '{edit.find}' in {edit.target} (best similarity: {score:.2f})")
 
@@ -117,6 +126,24 @@ class RecipeModifier:
                 ))
 
                 logger.info(f"Added '{edit.add}' after '{edit.find}' (similarity: {score:.2f})")
+            else:
+                logger.warning(f"Could not find target '{edit.find}' for addition")
+
+        elif edit.operation == "add_before":
+            # Add new content before finding target
+            match, index, score = self.find_best_match(edit.find, modified_content)
+
+            if match and index is not None and edit.add:
+                modified_content.insert(index, edit.add)
+
+                change_records.append(ChangeRecord(
+                    type="ingredient" if edit.target == "ingredients" else "instruction",
+                    from_text="",
+                    to_text=edit.add,
+                    operation="add"
+                ))
+
+                logger.info(f"Added '{edit.add}' before '{edit.find}' (similarity: {score:.2f})")
             else:
                 logger.warning(f"Could not find target '{edit.find}' for addition")
 

@@ -1,0 +1,51 @@
+{
+  "pipeline_summary": {
+    "recipes_processed": 4,
+    "total_modifications_applied": 9,
+    "total_changes_made": 11,
+    "change_type_distribution": {
+      "addition": 2,
+      "quantity_adjustment": 2,
+      "ingredient_substitution": 1
+    }
+  },
+  "enhanced_recipes": [
+    {
+      "recipe_id": "19117_enhanced",
+      "title": "Spicy Apple Cake (Community Enhanced)",
+      "modifications_count": 2,
+      "changes_count": 2,
+      "change_types": [
+        "addition"
+      ]
+    },
+    {
+      "recipe_id": "10813_enhanced",
+      "title": "Best Chocolate Chip Cookies (Community Enhanced)",
+      "modifications_count": 3,
+      "changes_count": 5,
+      "change_types": [
+        "addition",
+        "quantity_adjustment"
+      ]
+    },
+    {
+      "recipe_id": "144299_enhanced",
+      "title": "Nikujaga (Japanese-Style Meat and Potatoes) (Community Enhanced)",
+      "modifications_count": 1,
+      "changes_count": 1,
+      "change_types": [
+        "quantity_adjustment"
+      ]
+    },
+    {
+      "recipe_id": "77935_enhanced",
+      "title": "Creamy Sweet Potato With Ginger Soup (Community Enhanced)",
+      "modifications_count": 3,
+      "changes_count": 3,
+      "change_types": [
+        "ingredient_substitution"
+      ]
+    }
+  ]
+}
