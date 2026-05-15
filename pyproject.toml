@@ -10,6 +10,6 @@ dependencies = [
     "lxml>=6.0.2",
     "openai>=1.109.1",
     "pydantic>=2.11.9",
-    "python-dotenv>=1.1.1",
+    "python-dotenv>=1.2.2",
     "requests>=2.32.5",
 ]
