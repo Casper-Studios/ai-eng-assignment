@@ -1,0 +1,21 @@
+{
+  "pipeline_summary": {
+    "recipes_processed": 1,
+    "total_modifications_applied": 1,
+    "total_changes_made": 1,
+    "change_type_distribution": {
+      "quantity_adjustment": 1
+    }
+  },
+  "enhanced_recipes": [
+    {
+      "recipe_id": "144299_enhanced",
+      "title": "Nikujaga (Japanese-Style Meat and Potatoes) (Community Enhanced)",
+      "modifications_count": 1,
+      "changes_count": 1,
+      "change_types": [
+        "quantity_adjustment"
+      ]
+    }
+  ]
+}

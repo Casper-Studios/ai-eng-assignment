@@ -32,6 +32,46 @@ class RecipeModifier:
         self.similarity_threshold = similarity_threshold
         logger.info(f"Initialized RecipeModifier with similarity threshold: {similarity_threshold}")
 
+    def find_containing_match(
+        self, target: str, candidates: List[str]
+    ) -> Tuple[Optional[str], Optional[int], float]:
+        """
+        Find the first candidate that contains the target text as a substring.
+
+        This catches common instruction edits where the LLM extracts a phrase like
+        "about 10 minutes" but the recipe stores the full instruction sentence.
+
+        Args:
+            target: Text to locate within candidates
+            candidates: List of recipe strings to search in
+
+        Returns:
+            Tuple of (matching_candidate, index, similarity_score)
+        """
+        target_lower = target.lower().strip()
+        if not target_lower:
+            return None, None, 0.0
+
+        for i, candidate in enumerate(candidates):
+            candidate_lower = candidate.lower()
+            if target_lower in candidate_lower:
+                similarity = SequenceMatcher(None, target_lower, candidate_lower).ratio()
+                return candidate, i, similarity
+
+        return None, None, 0.0
+
+    def replace_case_insensitive(self, text: str, find: str, replace: str) -> str:
+        """Replace the first case-insensitive occurrence of find within text."""
+        text_lower = text.lower()
+        find_lower = find.lower()
+        start = text_lower.find(find_lower)
+
+        if start == -1:
+            return text
+
+        end = start + len(find)
+        return text[:start] + replace + text[end:]
+
     def find_best_match(self, target: str, candidates: List[str]) -> Tuple[Optional[str], Optional[int], float]:
         """
         Find the best matching string in a list of candidates.
@@ -83,12 +123,25 @@ class RecipeModifier:
         logger.debug(f"Applying {edit.operation} edit: find='{edit.find}'")
 
         if edit.operation == "replace":
-            # Find and replace text
-            match, index, score = self.find_best_match(edit.find, modified_content)
+            # Prefer substring matches within a recipe line before fuzzy line matching.
+            match, index, score = self.find_containing_match(edit.find, modified_content)
+
+            if not match:
+                match, index, score = self.find_best_match(edit.find, modified_content)
 
             if match and index is not None:
                 original_text = modified_content[index]
-                new_text = original_text.replace(edit.find, edit.replace or "")
+
+                if edit.find in original_text:
+                    new_text = original_text.replace(edit.find, edit.replace or "", 1)
+                else:
+                    new_text = self.replace_case_insensitive(
+                        original_text, edit.find, edit.replace or ""
+                    )
+
+                if new_text == original_text and score >= self.similarity_threshold:
+                    new_text = edit.replace or ""
+
                 modified_content[index] = new_text
 
                 change_records.append(ChangeRecord(

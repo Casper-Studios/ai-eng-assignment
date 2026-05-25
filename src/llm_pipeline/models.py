@@ -142,3 +142,4 @@ class Review(BaseModel):
     rating: Optional[int] = None
     username: Optional[str] = None
     has_modification: bool = False
+    is_featured: bool = False

@@ -13,9 +13,9 @@ import json
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from dotenv import load_dotenv
 from loguru import logger
 
+from .env_loader import load_project_env
 from .enhanced_recipe_generator import EnhancedRecipeGenerator
 from .models import EnhancedRecipe, Recipe, Review
 from .recipe_modifier import RecipeModifier
@@ -30,6 +30,9 @@ class LLMAnalysisPipeline:
         openai_api_key: Optional[str] = None,
         output_dir: str = "data/enhanced",
         pipeline_version: str = "1.0.0",
+        tweak_extractor: Optional[TweakExtractor] = None,
+        recipe_modifier: Optional[RecipeModifier] = None,
+        enhanced_generator: Optional[EnhancedRecipeGenerator] = None,
     ):
         """
         Initialize the complete LLM Analysis Pipeline.
@@ -40,15 +43,15 @@ class LLMAnalysisPipeline:
             pipeline_version: Version identifier for tracking
         """
         # Load environment variables
-        load_dotenv()
+        load_project_env()
 
         self.output_dir = Path(output_dir)
         self.output_dir.mkdir(parents=True, exist_ok=True)
 
         # Initialize pipeline components
-        self.tweak_extractor = TweakExtractor(api_key=openai_api_key)
-        self.recipe_modifier = RecipeModifier()
-        self.enhanced_generator = EnhancedRecipeGenerator(
+        self.tweak_extractor = tweak_extractor or TweakExtractor(api_key=openai_api_key)
+        self.recipe_modifier = recipe_modifier or RecipeModifier()
+        self.enhanced_generator = enhanced_generator or EnhancedRecipeGenerator(
             pipeline_version=pipeline_version
         )
 
@@ -98,23 +101,61 @@ class LLMAnalysisPipeline:
         Returns:
             List of Review objects
         """
-        reviews = []
-        raw_reviews = recipe_data.get("reviews", [])
+        def normalize_review_text(text: str) -> str:
+            return " ".join(text.split()).strip().lower()
 
-        for review_data in raw_reviews:
-            if review_data.get("text"):
-                review = Review(
-                    text=review_data["text"],
-                    rating=review_data.get("rating"),
-                    username=review_data.get("username"),
-                    has_modification=review_data.get("has_modification", False),
+        combined_reviews: dict[str, Review] = {}
+
+        for review_data in recipe_data.get("featured_tweaks", []):
+            if not review_data.get("text"):
+                continue
+
+            review = Review(
+                text=review_data["text"],
+                rating=review_data.get("rating"),
+                username=review_data.get("username"),
+                has_modification=review_data.get("has_modification", True),
+                is_featured=True,
+            )
+            combined_reviews[normalize_review_text(review.text)] = review
+
+        for review_data in recipe_data.get("reviews", []):
+            if not review_data.get("text"):
+                continue
+
+            normalized_text = normalize_review_text(review_data["text"])
+            existing_review = combined_reviews.get(normalized_text)
+
+            if existing_review:
+                existing_review.rating = existing_review.rating or review_data.get("rating")
+                existing_review.username = existing_review.username or review_data.get("username")
+                existing_review.has_modification = (
+                    existing_review.has_modification
+                    or review_data.get("has_modification", False)
                 )
-                reviews.append(review)
+                continue
 
-        return reviews
+            combined_reviews[normalized_text] = Review(
+                text=review_data["text"],
+                rating=review_data.get("rating"),
+                username=review_data.get("username"),
+                has_modification=review_data.get("has_modification", False),
+                is_featured=False,
+            )
+
+        return sorted(
+            combined_reviews.values(),
+            key=lambda review: (
+                not review.is_featured,
+                -(review.rating or 0),
+            ),
+        )
 
     def process_single_recipe(
-        self, recipe_file: str, save_output: bool = True
+        self,
+        recipe_file: str,
+        save_output: bool = True,
+        max_reviews: Optional[int] = None,
     ) -> Optional[EnhancedRecipe]:
         """
         Process a single recipe through the complete pipeline.
@@ -143,35 +184,57 @@ class LLMAnalysisPipeline:
                 logger.warning("No reviews with modifications found")
                 return None
 
-            # Step 1: Extract modification from one random review
-            logger.info("Step 1: Extracting modification from a single review...")
-            modification, source_review = (
-                self.tweak_extractor.extract_single_modification(reviews, recipe)
+            candidate_reviews = [r for r in reviews if r.has_modification]
+
+            # Step 1: Extract modifications from prioritized reviews.
+            logger.info(
+                f"Step 1: Extracting modifications from {len(candidate_reviews)} prioritized reviews..."
+            )
+            extracted_modifications = self.tweak_extractor.extract_modifications(
+                candidate_reviews, recipe, max_reviews=max_reviews
             )
 
-            if not modification or not source_review:
-                logger.warning("No modification could be extracted")
+            if not extracted_modifications:
+                logger.warning("No modifications could be extracted")
                 return None
 
             logger.info(
-                f"Successfully extracted {modification.modification_type} modification"
+                f"Successfully extracted {len(extracted_modifications)} candidate modifications"
             )
 
-            # Step 2: Apply modification to recipe
-            logger.info("Step 2: Applying modification to recipe...")
-            modified_recipe, change_records = self.recipe_modifier.apply_modification(
-                recipe, modification
-            )
+            # Step 2: Apply successful modifications sequentially.
+            logger.info("Step 2: Applying extracted modifications to recipe...")
+            modified_recipe = recipe
+            successful_modifications: list[
+                tuple[Any, Review, List[Any]]
+            ] = []
 
-            logger.info(
-                f"Applied modification: {len(change_records)} total changes made"
-            )
+            for modification, source_review in extracted_modifications:
+                modified_recipe, change_records = self.recipe_modifier.apply_modification(
+                    modified_recipe, modification
+                )
+
+                if change_records:
+                    successful_modifications.append(
+                        (modification, source_review, change_records)
+                    )
+                    logger.info(
+                        f"Applied {modification.modification_type}: {len(change_records)} changes made"
+                    )
+                else:
+                    logger.warning(
+                        f"Skipped attribution for {modification.modification_type}: no concrete changes were applied"
+                    )
+
+            if not successful_modifications:
+                logger.warning("No extracted modifications produced concrete recipe changes")
+                return None
 
             # Step 3: Generate enhanced recipe with attribution
             logger.info("Step 3: Generating enhanced recipe with attribution...")
 
-            enhanced_recipe = self.enhanced_generator.generate_enhanced_recipe(
-                recipe, modified_recipe, modification, source_review, change_records
+            enhanced_recipe = self.enhanced_generator.generate_enhanced_recipe_from_modifications(
+                recipe, modified_recipe, successful_modifications
             )
 
             logger.info(f"Generated enhanced recipe: {enhanced_recipe.title}")
@@ -193,25 +256,38 @@ class LLMAnalysisPipeline:
             traceback.print_exc()
             return None
 
-    def process_recipe_directory(self, data_dir: str = "data") -> List[EnhancedRecipe]:
+    def process_recipe_directory(
+        self,
+        data_dir: str = "data",
+        max_reviews_per_recipe: Optional[int] = None,
+        max_recipes: Optional[int] = None,
+    ) -> List[EnhancedRecipe]:
         """
         Process all recipe files in a directory.
 
         Args:
             data_dir: Directory containing recipe JSON files
+            max_reviews_per_recipe: Optional cap on extracted reviews per recipe
+            max_recipes: Optional cap on number of recipe files to process
 
         Returns:
             List of successfully processed EnhancedRecipe objects
         """
         data_path = Path(data_dir)
-        recipe_files = list(data_path.glob("recipe_*.json"))
+        recipe_files = sorted(data_path.glob("recipe_*.json"))
+
+        if max_recipes is not None:
+            recipe_files = recipe_files[:max_recipes]
 
         logger.info(f"Found {len(recipe_files)} recipe files to process")
 
         enhanced_recipes = []
         for recipe_file in recipe_files:
             logger.info(f"\n{'=' * 60}")
-            enhanced_recipe = self.process_single_recipe(str(recipe_file))
+            enhanced_recipe = self.process_single_recipe(
+                str(recipe_file),
+                max_reviews=max_reviews_per_recipe,
+            )
 
             if enhanced_recipe:
                 enhanced_recipes.append(enhanced_recipe)

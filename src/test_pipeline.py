@@ -13,22 +13,31 @@ Usage:
 import os
 import sys
 from pathlib import Path
-from dotenv import load_dotenv
 
 from llm_pipeline.pipeline import LLMAnalysisPipeline
+from llm_pipeline.env_loader import load_project_env
 from loguru import logger
 
-# Load environment variables from .env file
-load_dotenv()
+# Load environment variables from supported project locations.
+load_project_env()
+
+REPO_ROOT = Path(__file__).resolve().parents[1]
+
+
+def has_llm_api_key() -> bool:
+    """Check whether any supported LLM provider has credentials configured."""
+    return bool(os.getenv("OPENAI_API_KEY") or os.getenv("GEMINI_API_KEY"))
 
 
 def test_single_recipe():
     """Test the pipeline with the chocolate chip cookie recipe."""
 
-    # Check for OpenAI API key
-    if not os.getenv("OPENAI_API_KEY"):
-        logger.error("OPENAI_API_KEY environment variable not set")
-        logger.info("Please set your OpenAI API key in .env file")
+    # Check for supported LLM API key
+    if not has_llm_api_key():
+        logger.error("No supported LLM API key configured")
+        logger.info(
+            "Set GEMINI_API_KEY for Google AI Studio or OPENAI_API_KEY in your .env file"
+        )
         return False
 
     # Initialize pipeline
@@ -40,18 +49,21 @@ def test_single_recipe():
         return False
 
     # Test with chocolate chip cookie recipe
-    recipe_file = "../data/recipe_10813_best-chocolate-chip-cookies.json"
-    if not Path(recipe_file).exists():
+    recipe_file = REPO_ROOT / "data" / "recipe_10813_best-chocolate-chip-cookies.json"
+    if not recipe_file.exists():
         logger.error(f"Recipe file not found: {recipe_file}")
         return False
 
     logger.info(f"Testing with recipe file: {recipe_file}")
 
     try:
+        max_reviews = int(os.getenv("SINGLE_RECIPE_MAX_REVIEWS", "1"))
+
         # Process the recipe
         enhanced_recipe = pipeline.process_single_recipe(
             recipe_file=recipe_file,
-            save_output=True
+            save_output=True,
+            max_reviews=max_reviews,
         )
 
         if enhanced_recipe:
@@ -75,10 +87,12 @@ def test_single_recipe():
 def test_all_recipes():
     """Test the pipeline with all scraped recipes."""
 
-    # Check for OpenAI API key
-    if not os.getenv("OPENAI_API_KEY"):
-        logger.error("OPENAI_API_KEY environment variable not set")
-        logger.info("Please set your OpenAI API key in .env file")
+    # Check for supported LLM API key
+    if not has_llm_api_key():
+        logger.error("No supported LLM API key configured")
+        logger.info(
+            "Set GEMINI_API_KEY for Google AI Studio or OPENAI_API_KEY in your .env file"
+        )
         return False
 
     # Initialize pipeline
@@ -90,9 +104,14 @@ def test_all_recipes():
         return False
 
     try:
+        max_recipes = os.getenv("ALL_RECIPES_MAX_FILES")
+        max_reviews_per_recipe = os.getenv("ALL_RECIPES_MAX_REVIEWS", "1")
+
         # Process all recipes
         enhanced_recipes = pipeline.process_recipe_directory(
-            data_dir="../data"
+            data_dir=str(REPO_ROOT / "data"),
+            max_reviews_per_recipe=int(max_reviews_per_recipe),
+            max_recipes=int(max_recipes) if max_recipes else None,
         )
 
         # Generate summary report
